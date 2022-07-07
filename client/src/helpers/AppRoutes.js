@@ -14,6 +14,7 @@ import CreateCollectionPage from "../pages/createcollectionpage/CreateCollection
 import { LiveAuctionData } from "../components/liveauctions/LiveAuctionData";
 import EditProfilePage from "../pages/editprofilepage/EditProfilePage";
 import SignUpPage from "../pages/signuppage/SignUpPage";
+import SignInPage from "../pages/signinpage/SignInPage";
 
 
 function AppRoutes() {
@@ -32,6 +33,7 @@ function AppRoutes() {
             <Route path="createitem" element={<CreateItemPage/>}/>
             <Route path="createcollection" element={<CreateCollectionPage/>}/>
             <Route path="signup" element={<SignUpPage/>}/>
+            <Route path="signin" element={<SignInPage/>}/>
             
             <Route path="*" element={<h1 className="text-center">404 NOT FOUND</h1>}/>
         </Routes>

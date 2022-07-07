@@ -109,6 +109,13 @@ const Header = () => {
                 <NavDropdown.Item  onClick={() => setExpanded(false)}>All NFTs</NavDropdown.Item>
                 <NavDropdown.Item  onClick={() => setExpanded(false)}>Sports</NavDropdown.Item>
               </NavDropdown>
+
+              <NavDropdown title={<span>Stats <RiArrowDownSLine color="#007bff" /> </span>} 
+              id="basic-nav-dropdown" className="nav-link">
+                <NavDropdown.Item  onClick={() => setExpanded(false)}>Activity</NavDropdown.Item>
+                <NavDropdown.Item  onClick={() => setExpanded(false)}>Ranking</NavDropdown.Item>
+              </NavDropdown>
+
               <Link
                 className="nav-link"
                 to={"#"}

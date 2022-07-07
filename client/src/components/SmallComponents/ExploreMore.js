@@ -10,11 +10,11 @@ function ExploreMore(props) {
     <>
     {
       liveaution ? 
-      <div onClick={()=> navigate("/liveauction")}>
+      <div onClick={()=> navigate("/liveauction")} style={{cursor:'pointer'}}>
         <h6 className="font-weight-bold">Explore More</h6>
         <div className="primary_coloredunderline ms-auto"></div>
       </div> 
-    : <div>
+    : <div style={{cursor:'pointer'}}>
         <h6 className="font-weight-bold">Explore More</h6>
         <div className="primary_coloredunderline ms-auto"></div>
      </div>

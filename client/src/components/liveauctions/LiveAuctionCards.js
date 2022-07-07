@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { LiveAuctionData } from "./LiveAuctionData";
 import { Image, Row, Stack } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
@@ -9,10 +9,24 @@ import useWindowDimensions from '../../helpers/useWindowDimensions';
 import Bounce from 'react-reveal/Bounce';
 import useSound from 'use-sound';
 import join from '../../assets/audio/join.mp3';
+import PlacebidModal from "../placebidModal";
+
+
 
 function LiveAuctionCards() {
   const {width} = useWindowDimensions();
-  const [playSound] = useSound(join)
+  const [playSound] = useSound(join);
+
+  const [placeModalOpen, setPlaceModalOpen] = useState(false);
+
+  const placeModalClose = () =>{
+    setPlaceModalOpen(false);
+  } 
+
+  const onPlacebidClick = ()=>{
+    playSound();
+    setPlaceModalOpen(true);
+  }
   return (
     <>
       <Row>
@@ -78,9 +92,10 @@ function LiveAuctionCards() {
                       {data.price} {data.chain}
                     </h6>
                   </div>
-                  <button onClick={() => playSound()} className="metablog_primary-filled-square-button">
-                    <small>{data.button_name}</small>
+                  <button onClick={onPlacebidClick} className="metablog_primary-filled-square-button">
+                    <small>Place Bid</small>
                   </button>
+
                 </Stack>
               </div>
               </Bounce>
@@ -88,7 +103,12 @@ function LiveAuctionCards() {
           ))}
         </Swiper>
       </Row>
-      <Row></Row>
+      <PlacebidModal 
+        placeModalOpen={placeModalOpen}
+        setPlaceModalOpen={setPlaceModalOpen}
+        placeModalClose = {placeModalClose}
+        playSound={playSound}
+      />
     </>
   );
 }

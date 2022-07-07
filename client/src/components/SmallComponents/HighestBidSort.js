@@ -6,13 +6,20 @@ import { LiveAuctionData } from '../../components/liveauctions/LiveAuctionData';
 import useSound from 'use-sound';
 
 import join from '../../assets/audio/join.mp3';
+import PlacebidModal from '../placebidModal';
 
-const HighestBidSort = ()=>{
+const HighestBidSort = (props)=>{
+    let {setPlaceModalOpen} = props;
     const highestBid = [...LiveAuctionData].sort((a, b) => b.price - a.price);
 
     const {width} = useWindowDimensions();
-    const [joinSound] = useSound(join)
+    const [joinSound] = useSound(join);
+    const placebidBtnClick = ()=>{
+        joinSound()
+        setPlaceModalOpen(true)
+    }
     return (
+        <div>
         <Stack gap={3}>
         <Row>
             {
@@ -70,7 +77,7 @@ const HighestBidSort = ()=>{
                                     </h6>
                                 </Col>
                                 <Col md="auto" lg="auto" xxl="auto" xl="auto">
-                                <button onClick={() => joinSound()} className="metablog_primary-filled-square-button">
+                                <button onClick={placebidBtnClick} className="metablog_primary-filled-square-button">
                                     <small>{data.button_name}</small>
                                 </button>
                                 </Col>
@@ -83,6 +90,8 @@ const HighestBidSort = ()=>{
             }
         </Row>
         </Stack>
+        <PlacebidModal {...props} joinSound={joinSound}/>
+        </div>
     )
 }
 export default HighestBidSort;

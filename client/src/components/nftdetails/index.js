@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col, Image, Row, Stack, Tab, Tabs } from 'react-bootstrap'
 import { AiFillEye, AiTwotoneHeart } from 'react-icons/ai'
+import {MdOutlineSend} from 'react-icons/md'
 import NFTDetailsCards from './NFTDetailsCards'
 import './Styles.css'
 import Fade from 'react-reveal/Fade';
@@ -114,7 +115,7 @@ function NFTDetails(props) {
                                 </div>
                             </Stack>
                         </Tab>
-                        <Tab eventKey="Comments" title="Comments(4)">
+                        <Tab eventKey="Comments" title="Comments(3)" style={{height:'300px',overflowY:'scroll'}}>
                         <Stack gap={3}>
                                 <div className='d-flex'>
                                     <Image src={avatar1} height={45} width={45} />
@@ -131,19 +132,17 @@ function NFTDetails(props) {
                                     </div>
                                 </div>
                                 <div className='d-flex'>
-                                    <Image src={avatar3} height={45} width={45} />
-                                    <div className='d-flex flex-column mx-3'>
-                                        <span className='bold'>Samantha W</span>
-                                        <font size="2">Good & Professional</font>
-                                    </div>
-                                </div>
-                                <div className='d-flex'>
                                     <Image src={avatar4} height={45} width={45} />
                                     <div className='d-flex flex-column mx-3'>
                                         <span className='bold'>Jordan Nico</span>
                                         <font size="2">Awesome features offered by the metabloq looking unique and execellent collections.</font>
                                     </div>
                                 </div>
+                                <div className='d-flex align-items-end'>
+                                    <textarea type="text" placeholder='Enter your Comments' className='metabloq_comments-textarea'/>
+                                    <span ><MdOutlineSend color=" #0295FA" size={25}/></span>
+                                </div>
+                                
                             </Stack>
                         </Tab>
                     </Tabs>

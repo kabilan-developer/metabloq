@@ -8,6 +8,7 @@ import { NFTDetailsData } from './NFTDetailsData';
 import useSound from 'use-sound';
 import buttonSound from '../../assets/audio/button.wav';
 import join from '../../assets/audio/join.mp3';
+import PlacebidModal from '../placebidModal';
 
 const cardsPerPage = 4;
 let arrayForHoldingCards = [];
@@ -15,6 +16,7 @@ const NFTDetailsList = ()=>{
     const [cardsToShow, setCardsToShow] = useState([]);
     const [next, setNext] = useState(4);
     const {width} = useWindowDimensions();
+
 
     const loopWithSlice = (start, end) => {
         const slicedCards = NFTDetailsData.slice(start, end);
@@ -32,7 +34,18 @@ const NFTDetailsList = ()=>{
       };
       const [playSound] = useSound(buttonSound)
       const [joinSound] = useSound(join)
+
+      const [placeModalOpen, setPlaceModalOpen] = useState(false);
+
+      const placeModalClose = () => {
+        setPlaceModalOpen(false);
+      };
+      const placebidBtnClick  =()=>{
+        setPlaceModalOpen(true)
+        joinSound();
+      }
     return (
+        <>
         <Stack gap={3}>
         <Row>
             {
@@ -63,7 +76,7 @@ const NFTDetailsList = ()=>{
                                 <font size="2" className='ms-auto secondary-text poppins'>{data.outoff}</font>
                                 </div>
                             </div>
-                            <button onClick={() => joinSound()} className="metablog_primary-filled-square-button">
+                            <button onClick={placebidBtnClick} className="metablog_primary-filled-square-button">
                                 <small>Place Bid</small>
                             </button>
                             </Stack>
@@ -81,9 +94,17 @@ const NFTDetailsList = ()=>{
             </div>
             </Zoom>
         </Stack>
+        <PlacebidModal 
+        placeModalOpen={placeModalOpen}
+        setPlaceModalOpen={setPlaceModalOpen}
+        placeModalClose={placeModalClose}
+        joinSound={joinSound}/>
+        </>
     )
 }
 function NFTDetailsCards({collectors}) {
+    
+
   return (
     <>
     <div className='nftdetails_cards-menu '>
@@ -100,7 +121,7 @@ function NFTDetailsCards({collectors}) {
         <div className='ms-auto nftdetails_cards-tabs'>
             <Tabs defaultActiveKey="All" id="uncontrolled-tab-example" className="mb-3">
                     <Tab eventKey="All" title="All">
-                        <NFTDetailsList/>
+                        <NFTDetailsList />
                     </Tab>
                     <Tab eventKey="Art" title="Art">
                         Art

@@ -1,35 +1,32 @@
 import React, { useState } from "react";
-import "./Styles.css";
+
 import { Image, Stack } from "react-bootstrap";
 const google = require("../../assets/login/google.png");
 const facebook = require("../../assets/login/facebook.png");
 const linkedin = require("../../assets/login/linkedin.png");
 const twitter = require("../../assets/login/twitter.png");
 
-function SignUp() {
-  const [username,setusername] = useState('')
-  const [email,setemail] = useState('')
-  const [password,setpassword] = useState('')
+function SignIn() {
+  const [email, setemail] = useState("");
+  const [password, setpassword] = useState("");
 
-  const createAccount = (e)=>{
+  const Login = (e) => {
     e.preventDefault();
     let data = {
-      username,
       email,
-      password
-    }
-    setusername('');
-    setemail('');
-    setpassword('');
-    console.log("data",data);
-  }
+      password,
+    };
+    setemail("");
+    setpassword("");
+    console.log("data", data);
+  };
   return (
     <div className="signup_container">
       <Stack gap={3}>
         <div className="text-right">
           <font size="1">English (IN)</font>
         </div>
-        <h4>Create Account</h4>
+        <h4 className="font-weight-bold">Welcome back,</h4>
         <Stack gap={2} direction="horizontal">
           <div className="d-flex signup_social-icons-box">
             <Image fluid src={google} alt="google" height={10} width={20} />
@@ -57,38 +54,30 @@ function SignUp() {
           </div>
         </Stack>
         <small className="text-center">-OR-</small>
-        <form className="signup-form" onSubmit={createAccount}>
+        <form className="signup-form" onSubmit={Login}>
           <Stack gap={3}>
             <input
-              value={username}
-              onChange={(e)=> setusername(e.target.value)}
-              type="text"
-              placeholder="User Name"
-              className="editprofile_input"
-            />
-            <input
-              value={email}
-              onChange={(e)=> setemail(e.target.value)}
+             value={email}
+             onChange={(e)=> setemail(e.target.value)}
               type="text"
               placeholder="Email Address"
               className="editprofile_input"
             />
             <input
-              value={password}
-              onChange={(e)=> setpassword(e.target.value)}
+             value={password}
+             onChange={(e)=> setpassword(e.target.value)}
               type="password"
               placeholder="Password"
               className="editprofile_input"
             />
             <button type="submit" className="metablog_primary-filled-square-button">
-              <small className="font-weight-bold">Create Account</small>
+              <small className="font-weight-bold">Log In</small>
             </button>
           </Stack>
         </form>
         <div className="d-flex">
-          <span>Already have an account?</span>
           <button className="metablog_gradient-borderless-button">
-            <small>Login</small>
+            <small>Forget password</small>
           </button>
         </div>
       </Stack>
@@ -96,4 +85,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignIn;

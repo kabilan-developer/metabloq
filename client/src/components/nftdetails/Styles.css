@@ -22,3 +22,11 @@
     color:#1C83E5 !important ;
 }
   
+.metabloq_comments-textarea{
+    background-color: lightgray;
+    border-radius: .5em;
+    border: .5px solid lightgray;
+    width: 100%;
+    outline: none!important;
+    box-shadow: none!important;
+}
