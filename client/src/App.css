@@ -1,0 +1,149 @@
+/* global css */
+body {
+  /* overflow: hidden; */
+  margin: 0;
+  padding: 0;
+  font-family: "LufgaRegular" !important;
+}
+.App {
+  max-height: 100%;
+  overflow: hidden;
+}
+.bold{
+  font-weight: bold;
+}
+/* gradient button*/
+.metablog_gradient-button {
+
+  background: 
+    linear-gradient(white 0 0) padding-box, /*this is your grey background*/
+    linear-gradient(-90deg, #eb4a26 0%,
+    #a417d4 45.31%,
+    #0046b8 100%) border-box;
+  border: 1px solid transparent;
+  padding: 0.5em 1em;
+  border-radius: 1.5em;
+  display: inline-block;
+
+}
+.metablog_gradient-button:hover {
+  background: radial-gradient(
+    136.03% 6755.5% at 111.63% -36.03%,
+    #eb4a26 0%,
+    #a417d4 45.31%,
+    #0046b8 100%
+  );
+  color: white;
+}
+
+/* gradient borderless button*/
+.metablog_gradient-borderless-button {
+  background: radial-gradient(
+      136.03% 6755.5% at 111.63% -36.03%,
+      #eb4a26 0%,
+      #a417d4 45.31%,
+      #0046b8 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 0;
+}
+
+/* primary button */
+.metablog_primary-button {
+  border-radius: 1.5em;
+  padding: 0.5em 1.5em;
+  border: 1px solid #0d6efd;
+  background: transparent;
+}
+.metablog_primary-button:hover {
+  background: linear-gradient(102.66deg, #78ceff -17.72%, #0295fa 80.89%);
+  color: white;
+}
+
+/* filled primary button */
+.metablog_primary-filled-button {
+  border-radius: 1.5em;
+  padding: 0.5em 1.5em;
+  border: 1px solid #0d6efd;
+  background: linear-gradient(102.66deg, #78ceff -17.72%, #0295fa 80.89%);
+  color: white;
+}
+/* filled square primary button */
+.metablog_primary-filled-square-button {
+  border-radius: 0.5em;
+  padding: 0.2em 1.5em;
+  border: 1px solid #0d6efd;
+  background: linear-gradient(102.66deg, #78ceff -17.72%, #0295fa 80.89%);
+  color: white;
+}
+
+.secondary-text {
+  color: #838383;
+}
+
+/* global css for cards*/
+.metablog_cards {
+  cursor: pointer;
+  border-radius: 1em;
+  padding: 1em;
+}
+.metablog_cards:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.lufga {
+  font-family: "LufgaRegular";
+}
+.poppins {
+  font-family: "Poppins-Regular";
+}
+.raleway {
+  font-family: "Raleway-Regular";
+}
+
+.vertical-divider {
+  display: inline-block;
+  border-left: 1px solid #5a5a7c;
+  margin: 0 1px;
+  min-height: 100%;
+  opacity: 0.13;
+}
+
+.metabloq_img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: .5em;
+}
+
+.img-zoom-animation {
+  transition: transform 0.8s;
+}
+.img-zoom-animation:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+  transform-origin: 50% 50%;
+}
+
+/* container*/
+.metabloq_container {
+  padding: 0 10%;
+}
+.metabloq_container-fluid{
+  padding: 0 5%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+@media (max-width: 576px) {
+  .metabloq_container {
+    padding: 0 5%;
+  }
+}
+

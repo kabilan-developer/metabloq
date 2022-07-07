@@ -1,0 +1,8 @@
+.signuppage_container{
+    background-image: url('../../assets/profile/editprofileBg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
