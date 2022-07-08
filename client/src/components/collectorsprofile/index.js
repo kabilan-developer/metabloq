@@ -10,7 +10,6 @@ import { useSelector } from "react-redux";
 import {useNavigate} from 'react-router-dom'
 import useSound from 'use-sound';
 import buttonSound from '../../assets/audio/button.wav';
-import { conditionActionEdit } from '../../redux/condition/conditionAction';
 
 
 const coverpic = require('../../assets/profile/coverpic.png')
@@ -39,6 +38,11 @@ function CollectorsProfile() {
         playSound();
         navigate("editprofile");
     }
+
+    const activityClick = ()=>{
+        navigate("activity")
+        playSound();
+    }
   return (
     <Fade >
     <div className='collectors_profile h-100'>
@@ -46,7 +50,7 @@ function CollectorsProfile() {
             <Image src={coverpic} fluid alt="collector profile" className='metabloq_img' style={{borderRadius:'1em 1em 0 0'}}/>
         </div>
         <Row className='h-75 d-flex collectors_profile-imgdiv'>
-            <Col xxl={10} xl={10} lg={10} md={10} sm={12} xs={12} className='d-flex mb-3'>
+            <Col xxl={8} xl={8} lg={8} md={8} sm={12} xs={12} className='d-flex mb-3'>
                 <div className=''>
                     <Image src={profilepic} fluid alt="profile" style={{borderRadius:'1em'}} height={200} width={200}/>
                 </div>
@@ -69,17 +73,24 @@ function CollectorsProfile() {
                     </div>
                 </div>     
             </Col>
-            <Col xxl={2} xl={2} lg={2} md={2} sm={12} xs={12} className=''>
-                <div className='h-100 d-flex flex-column justify-content-around'>
+            <Col xxl={4} xl={4} lg={4} md={4} sm={12} xs={12} className=''>
+                <div className='h-100 d-flex flex-column justify-content-around align-items-center'>
                     <div className='collectors-social-icons-div d-flex justify-sm-content-end align-items-start'>
                         <span className='collectors-social-icons'><BsInstagram color="white" /></span>
                         <span className='collectors-social-icons'><BsTwitter color="white" /></span>
                         <span className='collectors-social-icons'><FaFacebookF color="white" /></span>
                         <span className='collectors-social-icons'><FaTelegramPlane color="white" /></span>
                     </div>
-                    <button className='metablog_gradient-button' onClick={editProfileClick}>
-                        <span>Edit Profile</span>
-                    </button>
+                    <div className='d-flex'>
+                        <Stack direction="horizontal" gap={3}>
+                        <button className='metablog_gradient-button' onClick={editProfileClick}>
+                            <span>Edit Profile</span>
+                        </button>
+                        <button className='metablog_primary-button' onClick={activityClick}>
+                            <span>My Activity</span>
+                        </button>
+                        </Stack>
+                    </div>
                 </div>
             </Col>
         </Row>

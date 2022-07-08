@@ -9,8 +9,8 @@ function CollectorsPage() {
     <div className='metabloq_container'>
         <Stack gap={5}>
             <CollectorsProfile/>
+            <CollectorsCollectionCard myprofile="myprofile"/>
             <NFTDetailsCards collectors="collectors"/>
-            <CollectorsCollectionCard/>
         </Stack>
         
     </div>

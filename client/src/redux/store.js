@@ -2,11 +2,11 @@ import { applyMiddleware, compose, createStore } from "redux";
 import { combineReducers } from "redux";
 import thunk from "redux-thunk";
 import WalletConnect from "./Reducer";
-import ConditionReducer from "./condition/conditionReducer";
+import TabReducer from "./TabReducer";
 
 const rootReducer = combineReducers({
   WalletConnect,
-  ConditionReducer
+  TabReducer
 });
 
 const middleware = [thunk];

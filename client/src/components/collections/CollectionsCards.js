@@ -15,7 +15,7 @@ function CollectionsCards() {
                         <Stack gap={2}>
                         <Row className='collections_cards-grid'>
                             <Col style={{padding:5}}>
-                                <Image fluid src={data.grid_img1} alt="gridimg1" className="metabloq_img img-zoom-animation"/>
+                                <Image fluid src={data.grid_img1} alt="gridimg1" className="metabloq_img img-zoom-animation h-100"/>
                             </Col>
                             <Col >
                                

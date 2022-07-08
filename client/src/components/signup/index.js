@@ -42,41 +42,6 @@ function SignUp() {
           <font size="1">English (IN)</font>
         </div>
         <h4>Create Account</h4>
-        <Row >
-          <Col md={3} lg={3} xl={3} xxl={3} sm={6} xs={6} className="mb-2">
-            <div className="d-sm-flex signup_social-icons-box">
-            <Image fluid src={google} alt="google" height={10} width={20} />
-            <font size="1" className="text-dark mx-1">
-              Google
-            </font>
-            </div>
-          </Col>
-          <Col md={3} lg={3} xl={3} xxl={3} sm={6} xs={6} className="mb-2">
-          <div className="d-sm-flex signup_social-icons-box">
-            <Image fluid src={facebook} alt="google" height={10} width={20} />
-            <font size="1" className="text-dark mx-1">
-              Facebook
-            </font>
-            </div>
-          </Col>
-          <Col md={3} lg={3} xl={3} xxl={3} sm={6} xs={6} className="mb-2">
-          <div className="d-sm-flex signup_social-icons-box">
-            <Image fluid src={linkedin} alt="google" height={10} width={20} />
-            <font size="1" className="text-dark mx-1">
-              LinkedIn
-            </font>
-            </div>
-          </Col>
-          <Col md={3} lg={3} xl={3} xxl={3} sm={6} xs={6} className="mb-2">
-          <div className="d-sm-flex signup_social-icons-box">
-            <Image fluid src={twitter} alt="google" height={10} width={20} />
-            <font size="1" className="text-dark mx-1">
-              Twitter
-            </font>
-            </div>
-          </Col>
-        </Row>
-        <small className="text-center">-OR-</small>
         <form className="signup-form" onSubmit={createAccount}>
           <Stack gap={3}>
             <input

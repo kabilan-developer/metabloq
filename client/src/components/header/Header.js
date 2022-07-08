@@ -12,6 +12,7 @@ import ConenctWallet from "../connectwallet/index.js";
 import useSound from "use-sound";
 import buttonSound from "../../assets/audio/button.wav";
 import connectWallet from "../../assets/audio/connectWallet.mp3";
+import { artAction, buildingAction, metapetsAction, miscellaneousAction, virtualrealestateAction, wearablesAction } from "../../redux/TabAction";
 
 const metablog_logo = require("../../assets/metablog_logo.png");
 
@@ -125,28 +126,47 @@ const Header = () => {
                 <NavDropdown.Item
                   onClick={() => {
                     setExpanded(false);
-                    navigate("collects");
+                    navigate("collections");
+                    dispatch(artAction());
                   }}
                 >
                   Art
                 </NavDropdown.Item>
                 <NavDropdown.Item onClick={() => {
                     setExpanded(false);
-                    navigate("collects");
+                    navigate("collections");
+                    dispatch(metapetsAction())
                   }}>
-                  Collectables
+                  Meta Pets
                 </NavDropdown.Item>
                 <NavDropdown.Item onClick={() => {
                     setExpanded(false);
-                    navigate("collects");
+                    navigate("collections");
+                    dispatch(virtualrealestateAction())
                   }}>
-                  All NFTs
+                  Virtual Real Estate
                 </NavDropdown.Item>
                 <NavDropdown.Item onClick={() => {
                     setExpanded(false);
-                    navigate("collects");
+                    navigate("collections");
+                    dispatch(wearablesAction())
                   }}>
-                  Sports
+                  Wearables
+                </NavDropdown.Item>
+
+                <NavDropdown.Item onClick={() => {
+                    setExpanded(false);
+                    navigate("collections");
+                    dispatch(buildingAction())
+                  }}>
+                  Buildings
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => {
+                    setExpanded(false);
+                    navigate("collections");
+                    dispatch(miscellaneousAction())
+                  }}>
+                  Miscellaneous
                 </NavDropdown.Item>
               </NavDropdown>
 

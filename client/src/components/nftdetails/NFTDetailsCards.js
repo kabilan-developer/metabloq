@@ -7,13 +7,14 @@ import Zoom from 'react-reveal/Zoom';
 import useSound from 'use-sound';
 import buttonSound from '../../assets/audio/button.wav';
 import join from '../../assets/audio/join.mp3';
-import PlacebidModal from '../placebidModal';
 import { useNavigate } from 'react-router-dom';
 import { LiveAuctionData } from '../liveauctions/LiveAuctionData';
+import Modalbox from '../modalbox/Modalbox';
 
 const cardsPerPage = 4;
 let arrayForHoldingCards = [];
-const NFTDetailsList = ()=>{
+const NFTDetailsList = (props)=>{
+    let {nftdetailspage} = props;
     const [cardsToShow, setCardsToShow] = useState([]);
     const [next, setNext] = useState(4);
     const {width} = useWindowDimensions();
@@ -37,14 +38,13 @@ const NFTDetailsList = ()=>{
       const [joinSound] = useSound(join)
 
       const [placeModalOpen, setPlaceModalOpen] = useState(false);
-
       const placeModalClose = () => {
         setPlaceModalOpen(false);
       };
-      const placebidBtnClick  =()=>{
-        setPlaceModalOpen(true)
-        joinSound();
-      }
+
+      //for puton sale modal
+      const [show,setShow] = useState(false);
+      const [nftsImg,setNftsImg] = useState('')
     return (
         <>
         <Stack gap={3}>
@@ -63,8 +63,8 @@ const NFTDetailsList = ()=>{
                                 <div className='d-flex'>
                                 {
                                 width < 576 ? 
-                                <h6>{data.name.slice(0, 12) + (data.name.length > 12 ? ".." : "")}</h6> :
-                                <h6>{data.name.slice(0, 20) + (data.name.length > 20 ? ".." : "")}</h6>
+                                <h6>{data.avatar_name.slice(0, 12) + (data.avatar_name.length > 12 ? ".." : "")}</h6> :
+                                <h6>{data.avatar_name.slice(0, 20) + (data.avatar_name.length > 20 ? ".." : "")}</h6>
                                 }
                                 <span className='ms-auto font-weight-bold'>...</span>
                                 </div>
@@ -78,9 +78,63 @@ const NFTDetailsList = ()=>{
                                 <font size="2" className='ms-auto secondary-text poppins'>{data.outoff}</font>
                                 </div>
                             </div>
-                            <button onClick={placebidBtnClick} className="metablog_primary-filled-square-button">
-                                <small>Place Bid</small>
-                            </button>
+                            { 
+                                data.button_name2 == "Place a Bid" ?
+                                <button onClick={()=>{
+                                    setShow(true)
+                                    joinSound()
+                                    setNftsImg(data.avatar)
+                                }}
+                                 className="metablog_gradient-button">
+                                {nftdetailspage ? 
+                                <small>{data.button_name2}</small> :
+                                <small>{data.profile_button}</small>}
+                                </button> : null 
+                                || data.button_name2 == "Make Offer" ? 
+                                <button onClick={()=>{
+                                    setShow(true)
+                                    joinSound()
+                                    setNftsImg(data.avatar)
+                                }}
+                                 className="metablog_gradient-button">
+                                {nftdetailspage ? 
+                                <small>{data.button_name2}</small> :
+                                <small>{data.profile_button}</small>}
+                                </button> : null 
+                                || data.button_name2 == "Buy" ? 
+                                <button onClick={()=>{
+                                    setShow(true)
+                                    joinSound()
+                                    setNftsImg(data.avatar)
+                                }}
+                                 className="metablog_primary-filled-button">
+                                {nftdetailspage ? 
+                                <small>{data.button_name2}</small> :
+                                <small>{data.profile_button}</small>}
+                                </button> : null 
+                                || data.button_name2 == "Put On Sale" ?
+                                <button onClick={()=>{
+                                    setShow(true)
+                                    joinSound()
+                                    setNftsImg(data.avatar)
+                                }}
+                                 className="metablog_gradient-filled-button">
+                                {nftdetailspage ? 
+                                <small>{data.button_name2}</small> :
+                                <small>{data.profile_button}</small>}
+                                </button> : null 
+                                || data.button_name2 == "On Sale" ? 
+                                <button onClick={()=>{
+                                    setShow(true)
+                                    joinSound()
+                                    setNftsImg(data.avatar)
+                                }}
+                                 className="metablog_primary-button">
+                                {nftdetailspage ? 
+                                <small>{data.button_name2}</small> :
+                                <small>{data.profile_button}</small>}
+                                </button> : null
+                            }
                             </Stack>
                         </div>
                         </Fade>
@@ -96,16 +150,12 @@ const NFTDetailsList = ()=>{
             </div>
             </Zoom>
         </Stack>
-        <PlacebidModal 
-        placeModalOpen={placeModalOpen}
-        setPlaceModalOpen={setPlaceModalOpen}
-        placeModalClose={placeModalClose}
-        joinSound={joinSound}/>
+        <Modalbox show={show} setShow={setShow} nftsImg={nftsImg}/>
         </>
     )
 }
-function NFTDetailsCards({collectors}) {
-    
+function NFTDetailsCards(props) {
+    let {collectors} = props;
 
   return (
     <>
@@ -119,11 +169,11 @@ function NFTDetailsCards({collectors}) {
             Explore more
         </h3>
         }
-        
-        <div className='ms-auto nftdetails_cards-tabs'>
+        <NFTDetailsList {...props}/>
+        {/* <div className='ms-auto nftdetails_cards-tabs'>
             <Tabs defaultActiveKey="All" id="uncontrolled-tab-example" className="mb-3">
                     <Tab eventKey="All" title="All">
-                        <NFTDetailsList />
+                        
                     </Tab>
                     <Tab eventKey="Art" title="Art">
                         Art
@@ -135,7 +185,7 @@ function NFTDetailsCards({collectors}) {
                         Collectibles
                     </Tab>
                 </Tabs>
-        </div>
+        </div> */}
     </div>
     </>
   )

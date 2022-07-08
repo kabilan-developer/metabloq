@@ -30,7 +30,7 @@
 .nav-link .dropdown-menu {
   position: absolute;
   z-index: 2000;
-  display: none;
+  /* display: none; */
   min-width: auto;
   padding: 0.5em;
   margin: 0;

@@ -3,18 +3,11 @@
     box-shadow: inset 49.2px -49.2px 49.2px rgba(194, 194, 194, 0.1), inset -49.2px 49.2px 49.2px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(98.4px);
     border-radius: 1em;
-    padding:2em;
+    padding:2em 5em;
     color: white;
 }
-.signup_social-icons-box{
-    background-color: white;
-    border-radius: .5em;
-    padding: .5em 1em;
-    display: flex;
-    align-items: center;
-}
 .signup-form{
-    padding: 0 10%;
+    padding: 0 0;
 }
 
 .signup-form .editprofile_input::placeholder{

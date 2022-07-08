@@ -108,7 +108,7 @@ function CreateItem() {
                         </div>
                         <div>
                             <h6 className='bold'>Price</h6>
-                            <input type="text" placeholder='Enter price for one item (ETH)' className='createitem_input'
+                            <input type="text" placeholder='Enter price for one item (XDC)' className='createitem_input'
                             value={price} onChange={(e)=> setPrice(e.target.value)}
                             />
                         </div>

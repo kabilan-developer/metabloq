@@ -72,6 +72,21 @@
   top: 0;
 }
 
+.filter-tabs .nav-tabs {
+  display: flex;
+  justify-content: flex-start !important;
+  align-items: center;
+
+}
+.filter-tabs .nav-tabs .nav-link.active {
+  background: linear-gradient(102.66deg, #78ceff -17.72%, #0295fa 80.89%);
+  color: white !important;
+  cursor: pointer;
+  border: 1px solid transparent;
+  display: inline-block;
+  border-radius: 1.5em;
+}
+
 @media(max-width:576px){
   .metabloq_webfilter-section{
     padding: 1em;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Col, Image, Row, Stack, Tab, Tabs } from 'react-bootstrap'
 import { AiFillEye, AiTwotoneHeart } from 'react-icons/ai'
 import {MdOutlineSend} from 'react-icons/md'
@@ -7,8 +7,11 @@ import './Styles.css'
 import Fade from 'react-reveal/Fade';
 import useSound from 'use-sound';
 import buttonSound from '../../assets/audio/button.wav';
+import connectWallet from '../../assets/audio/connectWallet.mp3';
 import join from '../../assets/audio/join.mp3';
 import {useParams} from 'react-router-dom';
+import PlacebidModal from '../placebidModal'
+import BuynowModal from '../buynowModal'
 
 const avatar1 = require('../../assets/profilepics/face7.jpg')
 const avatar2 = require('../../assets/profilepics/face8.jpg')
@@ -21,6 +24,26 @@ function NFTDetails(props) {
     let {LiveAuctionData} = props;
     const [playSound] = useSound(buttonSound)
     const [joinSound] = useSound(join)
+
+const [placeModalOpen, setPlaceModalOpen] = useState(false);
+const [buyModalOpen, setBuyModalOpen] = useState(false);
+
+  const placeModalClose = () =>{
+    setPlaceModalOpen(false);
+  } 
+  const buyModalClose = () =>{
+    setBuyModalOpen(false);
+  } 
+
+  const placebidClick = ()=>{
+    setPlaceModalOpen(true);
+    joinSound();
+  }
+  const buyClick = ()=>{
+    setBuyModalOpen(true);
+    joinSound();
+  }
+  const [success] = useSound(connectWallet)
   return (
     <div className='metabloq_container nftdetails_container'>
         <Stack gap={5}>
@@ -80,10 +103,10 @@ function NFTDetails(props) {
                     <span>{data.price} {data.chain} <span className='secondary-text'>{data.price_dollar}</span></span>
                 </div>
                 <div className='d-flex'>
-                    <button onClick={() => joinSound()} className='mr-2 nftcollection_mobile-category'>
+                    <button onClick={placebidClick} className='mr-2 nftcollection_mobile-category'>
                         <span>Place a Bid</span>
                     </button>
-                    <button onClick={() => playSound()} className='mx-2 metablog_primary-filled-square-button'>
+                    <button onClick={buyClick} className='mx-2 metablog_primary-filled-square-button'>
                         <span>Buy Now</span>
                     </button>
                 </div>
@@ -95,21 +118,21 @@ function NFTDetails(props) {
                                 <div className='d-flex'>
                                     <Image src={avatar1} height={45} width={45} />
                                     <div className='d-flex flex-column mx-3'>
-                                        <span className='bold'>Bid 0.093 ETH</span>
+                                        <span className='bold'>Bid 0.093 XDC</span>
                                         <font size="2">by Harpreet at 3/10/2022, 10:15 AM</font>
                                     </div>
                                 </div>
                                 <div className='d-flex'>
                                     <Image src={avatar2} height={45} width={45} />
                                     <div className='d-flex flex-column mx-3'>
-                                        <span className='bold'>Bid 0.093 ETH</span>
+                                        <span className='bold'>Bid 0.093 XDC</span>
                                         <font size="2">by Harpreet at 3/10/2022, 10:15 AM</font>
                                     </div>
                                 </div>
                                 <div className='d-flex'>
                                     <Image src={avatar3} height={45} width={45} />
                                     <div className='d-flex flex-column mx-3'>
-                                        <span className='bold'>Bid 0.093 ETH</span>
+                                        <span className='bold'>Bid 0.093 XDC</span>
                                         <font size="2">by Harpreet at 3/10/2022, 10:15 AM</font>
                                     </div>
                                 </div>
@@ -154,8 +177,20 @@ function NFTDetails(props) {
                 ))
             }
         </Row>
-        <NFTDetailsCards/>
+        <NFTDetailsCards nftdetailspage="nftdetailspage"/>
         </Stack>
+        <PlacebidModal 
+         placeModalOpen={placeModalOpen}
+         setPlaceModalOpen={setPlaceModalOpen}
+         placeModalClose = {placeModalClose}
+         playSound={playSound}/>
+         <BuynowModal 
+         buyModalOpen={buyModalOpen}
+         setBuyModalOpen={setBuyModalOpen}
+         buyModalClose = {buyModalClose}
+         playSound={playSound}
+         />
+
     </div>
   )
 }

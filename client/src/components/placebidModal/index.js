@@ -47,25 +47,29 @@ function PlacebidModal(props) {
         <Box sx={style}>
           <div className="placebid_modal-box">
             <Stack gap={3}>
+              <div>
                 <div className=" d-flex justify-content-between align-items-center">
                   <h3 className="font-weight-bold">Place a bid</h3>
                   <small onClick={placeModalClose} style={{cursor:'pointer'}}>X</small>
                 </div>
-                <small>You must bid at least 0.825 ETH</small>
+                <small>Highest Bid 0.824 XDC</small>
+                </div>
+                
+                <small>You must bid at least 0.825 XDC</small>
               <div>
                 <Stack gap={1}>
                   <small className="font-weight-bold">Your bid</small>
                   <div className=" d-flex justify-content-between align-items-center">
-                    <small>Enter bid</small> <small className="font-weight-bold">ETH</small>
+                    <small>Enter bid</small> <small className="font-weight-bold">XDC</small>
                   </div>
                   <div className=" d-flex justify-content-between align-items-center">
-                    <small>Your balance</small> <small className="font-weight-bold">4.568 ETH</small>
+                    <small>Your balance</small> <small className="font-weight-bold">4.568 XDC</small>
                   </div>
                   <div className=" d-flex justify-content-between align-items-center">
-                    <small>Service fee</small> <small className="font-weight-bold">0.001 ETH</small>
+                    <small>Service fee</small> <small className="font-weight-bold">0.001 XDC</small>
                   </div>
                   <div className=" d-flex justify-content-between align-items-center">
-                    <small>Total</small> <small className="font-weight-bold">0.001 ETH</small>
+                    <small>Total</small> <small className="font-weight-bold">0.001 XDC</small>
                   </div>
                 </Stack>
               </div>

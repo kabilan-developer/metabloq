@@ -8,7 +8,8 @@ import useSound from 'use-sound';
 import buttonSound from '../../assets/audio/button.wav'
 import WebFilter from "./WebFilter";
 
-function MobileFilterBtn() {
+function MobileFilterBtn(props) {
+    let {collections} = props;
     const [filterDrawer, setFilterDrawer] = useState(false);
     const [categoryDrawer, setCategoryDrawer] = useState(false);
     const [playSound] = useSound(buttonSound);
@@ -87,6 +88,7 @@ function MobileFilterBtn() {
           <Drawer open={filterDrawer} onClose={() => setFilterDrawer(false)} PaperProps={{
                     sx: { width: "70%" },}}> 
                 <WebFilter 
+                  collections={collections}
                   showFilter={showFilter}
                   setShowFilter={setShowFilter}
                   rangeSlider={rangeSlider}
