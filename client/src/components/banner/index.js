@@ -43,7 +43,7 @@ function Banner() {
             <div className="">
               <button onClick={() =>{
                 playSound();
-                navigate("nftcollectionexplore");
+                navigate("assets");
               }} className="metablog_primary-filled-button mx-2">
                 <span>Explore Now</span>
               </button>

@@ -12,13 +12,14 @@ import { AiTwotoneHeart } from 'react-icons/ai';
 const nft2 = require('../../assets/nfts/8.png')
 const img3 = require('../../assets/collectables/collectables2.png');
 const avatar1 = require('../../assets/profilepics/face4.jpg')
+const empty = require('../../assets/empty.png')
 
 function CreateCollection() {
     const [playSound] = useSound(buttonSound)
     const {width} = useWindowDimensions()
     const [title,setTitle] = useState('')
-    const [bannerImg,setBannerImg] = useState(img3);
-    const [featuredImg,setFeaturedImg] = useState(avatar1);
+    const [bannerImg,setBannerImg] = useState(empty);
+    const [featuredImg,setFeaturedImg] = useState(empty);
 
     const bannerImageChange = (e)=>{
         var file = e.target.files[0]

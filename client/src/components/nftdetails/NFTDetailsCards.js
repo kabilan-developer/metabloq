@@ -4,11 +4,12 @@ import { Col, Image, Row, Stack, Tab, Tabs } from 'react-bootstrap';
 import useWindowDimensions from '../../helpers/useWindowDimensions';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
-import { NFTDetailsData } from './NFTDetailsData';
 import useSound from 'use-sound';
 import buttonSound from '../../assets/audio/button.wav';
 import join from '../../assets/audio/join.mp3';
 import PlacebidModal from '../placebidModal';
+import { useNavigate } from 'react-router-dom';
+import { LiveAuctionData } from '../liveauctions/LiveAuctionData';
 
 const cardsPerPage = 4;
 let arrayForHoldingCards = [];
@@ -16,10 +17,10 @@ const NFTDetailsList = ()=>{
     const [cardsToShow, setCardsToShow] = useState([]);
     const [next, setNext] = useState(4);
     const {width} = useWindowDimensions();
-
+    const navigate = useNavigate()
 
     const loopWithSlice = (start, end) => {
-        const slicedCards = NFTDetailsData.slice(start, end);
+        const slicedCards = LiveAuctionData.slice(start, end);
         arrayForHoldingCards = [...arrayForHoldingCards, ...slicedCards];
         setCardsToShow(arrayForHoldingCards);
     };
@@ -55,7 +56,8 @@ const NFTDetailsList = ()=>{
                          <div className="liveauction_cards metablog_cards h-100" key={data.id}>
                             <Stack gap={2}>
                             <div className="liveauction_cards-imgwithtime my-2">
-                                <Image fluid src={data.image} alt="square" className="metabloq_img img-zoom-animation"/>
+                                <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"
+                                onClick={() => navigate(`${data.id}`)}/>
                             </div>
                             <div className=''>
                                 <div className='d-flex'>

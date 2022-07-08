@@ -98,6 +98,9 @@ body {
   border: 1px solid #0d6efd;
   background: linear-gradient(102.66deg, #78ceff -17.72%, #0295fa 80.89%);
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .secondary-text {
@@ -116,6 +119,9 @@ body {
 
 .lufga {
   font-family: "LufgaRegular";
+}
+.lufga-bold{
+  font-family: "LufgaBold";
 }
 .poppins {
   font-family: "Poppins-Regular";

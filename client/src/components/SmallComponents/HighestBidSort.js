@@ -7,9 +7,11 @@ import useSound from 'use-sound';
 
 import join from '../../assets/audio/join.mp3';
 import PlacebidModal from '../placebidModal';
+import { useNavigate } from 'react-router-dom';
 
 const HighestBidSort = (props)=>{
     let {setPlaceModalOpen} = props;
+    const navigate = useNavigate()
     const highestBid = [...LiveAuctionData].sort((a, b) => b.price - a.price);
 
     const {width} = useWindowDimensions();
@@ -48,7 +50,8 @@ const HighestBidSort = (props)=>{
                                 </div>
                             </div>
                             <div className="liveauction_cards-imgwithtime my-2">
-                                <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"/>
+                                <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"
+                                onClick={() => navigate(`${data.id}`)}/>
                                 <div className="liveauction_cards-timebox d-flex justify-content-center align-items-center">
                                 <Image
                                     fluid

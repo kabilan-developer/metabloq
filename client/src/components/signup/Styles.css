@@ -5,7 +5,6 @@
     border-radius: 1em;
     padding:2em;
     color: white;
-    
 }
 .signup_social-icons-box{
     background-color: white;
@@ -16,11 +15,33 @@
 }
 .signup-form{
     padding: 0 10%;
-    
 }
 
 .signup-form .editprofile_input::placeholder{
     font-size: 12px;
     color: #838383;
     opacity: .5;
+}
+.signup_password-input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: .5em;
+    padding-right: .5em;
+}
+
+@media(max-width:576px){
+    .signup_social-icons-box{
+        padding: .5em 1em;
+        display: flex;
+        align-items: center;
+    }
+    .signup-form{
+        padding: 0;
+    }
+    .signup_container{
+        padding:2em;
+        color: white;
+    }
 }

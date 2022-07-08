@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import "./Styles.css";
-import { Stack } from "react-bootstrap";
+import { Image, Stack } from "react-bootstrap";
+import useSound from 'use-sound';
+import connectWallet from '../../assets/audio/connectWallet.mp3';
+
+const smallstar = require('../../assets/smallstar.png')
+const bigstar = require('../../assets/bigstar.png')
 
 const style = {
     position: 'absolute',
@@ -19,15 +24,18 @@ const style = {
   
 function PlacebidModal(props) {
   let { placeModalOpen, setPlaceModalOpen,placeModalClose,playSound,joinSound } = props;
+  const [successModal,setSuccessModal] = useState(false);
+
+  const successModalClose = ()=>{
+    setSuccessModal(false)
+  }
 
   const placebidClick = ()=>{
-    setPlaceModalOpen(false)
-    if(joinSound){
-        joinSound()
-    }else{
-        playSound()
-    }
+    setPlaceModalOpen(false);
+    setSuccessModal(true);
+    success();
   }
+  const [success] = useSound(connectWallet)
   return (
     <>
       <Modal
@@ -73,6 +81,46 @@ function PlacebidModal(props) {
                   onClick={placeModalClose}
                 >
                   <span>Cancel</span>
+                </button>
+              </Stack>
+            </Stack>
+          </div>
+        </Box>
+      </Modal>
+
+      <Modal
+        open={successModal}
+        onClose={successModalClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <div className="placebid_modal-box">
+            <Stack gap={3}>
+                <div className=" d-flex justify-content-between align-items-center">
+                  <h3 className="font-weight-bold">Payment success</h3>
+                  <small onClick={successModalClose} style={{cursor:'pointer'}}>X</small>
+                </div>
+              <div className="d-flex flex-column mx-auto">
+                <Stack gap={2}>
+                  <div className="d-flex justify-content-center">
+                    <Image fluid src={smallstar} alt="small start"/>
+                    <Image fluid src={bigstar} alt="bigstar"/>
+                  </div>
+                  <span className="lufga-bold">Your payment was success</span>
+                  <div className="d-flex justify-content-between">
+                    <font size="2">Payment Id</font>
+                    <font size="2" className="lufga-bold">15263541</font>
+                  </div>
+                </Stack>
+                  
+              </div>
+              <Stack gap={2}>
+                <button
+                  className="metablog_gradient-square-button"
+                  onClick={successModalClose}
+                >
+                  <span>Back to home</span>
                 </button>
               </Stack>
             </Stack>

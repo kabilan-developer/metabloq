@@ -8,6 +8,7 @@ import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
 import { Col, Image, Row, Stack } from 'react-bootstrap'
 import PlacebidModal from '../placebidModal';
+import { useNavigate } from 'react-router-dom';
 
 
 const cardsPerPage = 4;
@@ -15,6 +16,7 @@ let arrayForHoldingCards = [];
 
 function AllLiveAuction(props) {
     let {setPlaceModalOpen} = props;
+    const navigate = useNavigate()
     const [cardsToShow, setCardsToShow] = useState([]);
     const [next, setNext] = useState(4);
     const {width} = useWindowDimensions();
@@ -71,7 +73,8 @@ function AllLiveAuction(props) {
                                 </div>
                             </div>
                             <div className="liveauction_cards-imgwithtime my-2">
-                                <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"/>
+                                <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"
+                                onClick={() => navigate(`${data.id}`)}/>
                                 <div className="liveauction_cards-timebox d-flex justify-content-center align-items-center">
                                 <Image
                                     fluid

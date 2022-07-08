@@ -7,3 +7,9 @@
     align-items: center;
     padding: 5% 10%;
 }
+
+@media(max-width:576px){
+    .signuppage_container{
+        padding: 5%;
+    }
+}

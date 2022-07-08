@@ -6,9 +6,11 @@ import { LiveAuctionData } from '../../components/liveauctions/LiveAuctionData';
 import useSound from 'use-sound';
 import join from '../../assets/audio/join.mp3';
 import PlacebidModal from '../placebidModal';
+import { useNavigate } from 'react-router-dom';
 
 const CollectionSort = (props)=>{
     let {setPlaceModalOpen} = props;
+    const navigate = useNavigate()
     const CollectionSort = [...LiveAuctionData].sort((a, b) => a.name > b.name ? 1 : -1);
     const {width} = useWindowDimensions();
     const [joinSound] = useSound(join)
@@ -47,7 +49,8 @@ const CollectionSort = (props)=>{
                                 </div>
                             </div>
                             <div className="liveauction_cards-imgwithtime my-2">
-                                <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"/>
+                                <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"
+                                onClick={() => navigate(`${data.id}`)}/>
                                 <div className="liveauction_cards-timebox d-flex justify-content-center align-items-center">
                                 <Image
                                     fluid

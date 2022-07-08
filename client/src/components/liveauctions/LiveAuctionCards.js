@@ -10,12 +10,13 @@ import Bounce from 'react-reveal/Bounce';
 import useSound from 'use-sound';
 import join from '../../assets/audio/join.mp3';
 import PlacebidModal from "../placebidModal";
-
+import {useNavigate} from 'react-router-dom'
 
 
 function LiveAuctionCards() {
   const {width} = useWindowDimensions();
   const [playSound] = useSound(join);
+  const navigate = useNavigate();
 
   const [placeModalOpen, setPlaceModalOpen] = useState(false);
 
@@ -64,7 +65,8 @@ function LiveAuctionCards() {
                     </div>
                   </div>
                   <div className="liveauction_cards-imgwithtime my-2">
-                    <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"/>
+                    <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"
+                    onClick={() => navigate(`${data.id}`)}/>
                     <div className="liveauction_cards-timebox d-flex justify-content-center align-items-center">
                       <Image
                         fluid
@@ -72,8 +74,6 @@ function LiveAuctionCards() {
                         alt="time"
                         height={15}
                         width={15}
-                      
-                      
                       />
                       <small className="mx-2">{data.time}</small>
                     </div>

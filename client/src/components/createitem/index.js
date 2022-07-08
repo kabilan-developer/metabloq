@@ -13,13 +13,14 @@ const nft2 = require('../../assets/nfts/8.png')
 const fixed = require('../../assets/createitem/fixed.png')
 const timed_auction = require('../../assets/createitem/timed_auction.png')
 const open_bids = require('../../assets/createitem/open_bids.svg')
+const empty = require('../../assets/empty.png')
 
 function CreateItem() {
     const [playSound] = useSound(buttonSound)
     const {width} = useWindowDimensions()
     const [title,setTitle] = useState('')
     const [price,setPrice] = useState('')
-    const [uploadedImg,setUploadedImg] = useState(nft2);
+    const [uploadedImg,setUploadedImg] = useState(empty);
 
     const getBase64 = (e)=>{
         var file = e.target.files[0]
@@ -54,7 +55,10 @@ function CreateItem() {
                                 </div>
                             </div>
                             <div className="liveauction_cards-imgwithtime my-2">
-                                <Image fluid src={uploadedImg} alt="square" className="metabloq_img img-zoom-animation"/>
+                                <div >
+                                    <Image  src={uploadedImg} alt="square" className="metabloq_img img-zoom-animation" 
+                                    height={220} width={220}/>
+                                </div>
                                 <div className="liveauction_cards-timebox d-flex justify-content-center align-items-center">
                                 <Image
                                     fluid
@@ -198,7 +202,7 @@ function CreateItem() {
                 <Bounce>
                 <div className='d-flex justify-content-center'>
                     <button onClick={() => playSound()} className='metablog_primary-filled-button'>
-                        <span>Create Item</span>
+                        <span>Create NFT</span>
                     </button>
                 </div>
                 </Bounce>

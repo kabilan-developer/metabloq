@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import './fonts/poppins/Poppins-Regular.ttf';
 import './fonts/lufga/LufgaRegular.ttf';
+import './fonts/lufga/LufgaBold.ttf';
 import './fonts/raleway/Raleway-Regular.ttf';
 import './index.css'
 import { ThemeProvider } from "@mui/material/styles";

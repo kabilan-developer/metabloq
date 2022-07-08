@@ -1,6 +1,5 @@
 import React from "react";
 import { Stack } from "react-bootstrap";
-import ExploreMore from "../SmallComponents/ExploreMore";
 import ExploreCategoryCards from "./ExploreCategoryCards";
 import "./Styles.css";
 import useWindowDimensions from "../../helpers/useWindowDimensions";
@@ -32,7 +31,10 @@ function ExploreCategory() {
           }
           
         </div>
-        <ExploreMore />
+        <div  style={{cursor:'pointer'}}>
+        <h6 className="font-weight-bold">Explore More</h6>
+        <div className="primary_coloredunderline ms-auto"></div>
+        </div>
       </div>
       <ExploreCategoryCards />
     </Stack>
