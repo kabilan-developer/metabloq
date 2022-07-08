@@ -24,9 +24,28 @@ body {
   padding: 0.5em 1em;
   border-radius: 1.5em;
   display: inline-block;
-
 }
 .metablog_gradient-button:hover {
+  background: radial-gradient(
+    136.03% 6755.5% at 111.63% -36.03%,
+    #eb4a26 0%,
+    #a417d4 45.31%,
+    #0046b8 100%
+  );
+  color: white;
+}
+.metablog_gradient-square-button {
+  background: 
+    linear-gradient(white 0 0) padding-box, /*this is your grey background*/
+    linear-gradient(-90deg, #eb4a26 0%,
+    #a417d4 45.31%,
+    #0046b8 100%) border-box;
+  border: 1px solid transparent;
+  padding: 0.2em 1em;
+  border-radius: .5em;
+  display: inline-block;
+}
+.metablog_gradient-square-button:hover {
   background: radial-gradient(
     136.03% 6755.5% at 111.63% -36.03%,
     #eb4a26 0%,
@@ -79,6 +98,9 @@ body {
   border: 1px solid #0d6efd;
   background: linear-gradient(102.66deg, #78ceff -17.72%, #0295fa 80.89%);
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .secondary-text {
@@ -97,6 +119,9 @@ body {
 
 .lufga {
   font-family: "LufgaRegular";
+}
+.lufga-bold{
+  font-family: "LufgaBold";
 }
 .poppins {
   font-family: "Poppins-Regular";

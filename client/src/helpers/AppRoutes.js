@@ -14,6 +14,9 @@ import CreateCollectionPage from "../pages/createcollectionpage/CreateCollection
 import { LiveAuctionData } from "../components/liveauctions/LiveAuctionData";
 import EditProfilePage from "../pages/editprofilepage/EditProfilePage";
 import SignUpPage from "../pages/signuppage/SignUpPage";
+import SignInPage from "../pages/signinpage/SignInPage";
+import Ranking from "../components/ranking";
+import Activity from "../components/activity";
 
 
 function AppRoutes() {
@@ -23,15 +26,21 @@ function AppRoutes() {
       <Header />
         <Routes>
             <Route path="/" element={<HomePage/>}/>
+            <Route path="/:id" element={<NFTDetailsPage LiveAuctionData={LiveAuctionData}/>}/>
             <Route path="liveauction" element={<LiveAuctionPage/>}/>
-            <Route path="nftcollectionexplore" element={<NFTCollectionPage/>}/>
-            <Route path="nftcollection" element={<NFTCollectionPage collections="collections"/>}/>
-            <Route path="nftcollectionexplore/:id" element={<NFTDetailsPage LiveAuctionData={LiveAuctionData}/>}/>
+            <Route path="liveauction/:id" element={<NFTDetailsPage LiveAuctionData={LiveAuctionData}/>}/>
+            <Route path="assets" element={<NFTCollectionPage/>}/>
+            <Route path="collects" element={<NFTCollectionPage collections="collections"/>}/>
+            <Route path="assets/:id" element={<NFTDetailsPage LiveAuctionData={LiveAuctionData}/>}/>
             <Route path="collectors" element={<CollectorsPage/>}/>
+            <Route path="collectors/:id" element={<NFTDetailsPage LiveAuctionData={LiveAuctionData}/>}/>
             <Route path="collectors/editprofile" element={<EditProfilePage/>}/>
-            <Route path="createitem" element={<CreateItemPage/>}/>
             <Route path="createcollection" element={<CreateCollectionPage/>}/>
+            <Route path="createnft" element={<CreateItemPage/>}/>
             <Route path="signup" element={<SignUpPage/>}/>
+            <Route path="signin" element={<SignInPage/>}/>
+            <Route path="ranking" element={<Ranking/>}/>
+            <Route path="activity" element={<Activity/>}/>
             
             <Route path="*" element={<h1 className="text-center">404 NOT FOUND</h1>}/>
         </Routes>

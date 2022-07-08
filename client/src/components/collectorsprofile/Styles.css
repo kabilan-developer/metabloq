@@ -24,5 +24,6 @@
 @media(max-width:576px){
     .collectors-social-icons-div{
        justify-content: center;
+       padding: 1em 0;
     }
 }

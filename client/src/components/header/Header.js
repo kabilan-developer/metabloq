@@ -9,9 +9,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { RiArrowDownSLine } from "react-icons/ri";
 import ConenctWallet from "../connectwallet/index.js";
-import useSound from 'use-sound';
-import buttonSound from '../../assets/audio/button.wav';
-import connectWallet from '../../assets/audio/connectWallet.mp3';
+import useSound from "use-sound";
+import buttonSound from "../../assets/audio/button.wav";
+import connectWallet from "../../assets/audio/connectWallet.mp3";
 
 const metablog_logo = require("../../assets/metablog_logo.png");
 
@@ -20,17 +20,16 @@ const Header = () => {
   const [expanded, setExpanded] = useState(false);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const wallet = useSelector((state) => state.WalletConnect);
   console.log(wallet);
   const { width } = useWindowDimensions();
- 
 
   const connect = () => {
     console.log("connect");
     setExpanded(false);
     setOpenWallet(true);
-    walletConnectSound()
+    walletConnectSound();
     // dispatch(connectWallet());
   };
 
@@ -42,10 +41,10 @@ const Header = () => {
     web3Modal.clearCachedProvider();
     dispatch(connectFailed(errorDiv()));
     setExpanded(false);
-    walletConnectSound()
+    walletConnectSound();
   };
-  const [playSound] = useSound(buttonSound)
-  const [walletConnectSound] = useSound(connectWallet)
+  const [playSound] = useSound(buttonSound);
+  const [walletConnectSound] = useSound(connectWallet);
   return (
     <>
       <Navbar
@@ -87,28 +86,97 @@ const Header = () => {
               >
                 Home
               </Link>
-              <NavDropdown  title={<span>New Items <RiArrowDownSLine color="#007bff" /> </span>}
-               id="basic-nav-dropdown" className="nav-link">
-                <NavDropdown.Item  onClick={() =>{
-                    setExpanded(false)
-                    navigate("createcollection")
-                } }>Collection</NavDropdown.Item>
-                <NavDropdown.Item  onClick={() =>{
-                    navigate("createitem")
-                    setExpanded(false)
-                }}>NFT</NavDropdown.Item>
+              <NavDropdown
+                title={
+                  <span>
+                    New Items <RiArrowDownSLine color="#007bff" />{" "}
+                  </span>
+                }
+                id="basic-nav-dropdown"
+                className="nav-link"
+              >
+                <NavDropdown.Item
+                  onClick={() => {
+                    setExpanded(false);
+                    navigate("createcollection");
+                  }}
+                >
+                  Collection
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={() => {
+                    navigate("createnft");
+                    setExpanded(false);
+                  }}
+                >
+                  NFT
+                </NavDropdown.Item>
               </NavDropdown>
 
-              <NavDropdown title={<span>Collections <RiArrowDownSLine color="#007bff" /> </span>} 
-              id="basic-nav-dropdown" className="nav-link">
-                <NavDropdown.Item  onClick={() =>{
-                  setExpanded(false)
-                  navigate("nftcollection")
-                }}>Art</NavDropdown.Item>
-                <NavDropdown.Item  onClick={() => setExpanded(false)}>Collectables</NavDropdown.Item>
-                <NavDropdown.Item  onClick={() => setExpanded(false)}>All NFTs</NavDropdown.Item>
-                <NavDropdown.Item  onClick={() => setExpanded(false)}>Sports</NavDropdown.Item>
+              <NavDropdown
+                title={
+                  <span>
+                    Collections <RiArrowDownSLine color="#007bff" />{" "}
+                  </span>
+                }
+                id="basic-nav-dropdown"
+                className="nav-link"
+              >
+                <NavDropdown.Item
+                  onClick={() => {
+                    setExpanded(false);
+                    navigate("collects");
+                  }}
+                >
+                  Art
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => {
+                    setExpanded(false);
+                    navigate("collects");
+                  }}>
+                  Collectables
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => {
+                    setExpanded(false);
+                    navigate("collects");
+                  }}>
+                  All NFTs
+                </NavDropdown.Item>
+                <NavDropdown.Item onClick={() => {
+                    setExpanded(false);
+                    navigate("collects");
+                  }}>
+                  Sports
+                </NavDropdown.Item>
               </NavDropdown>
+
+              <NavDropdown
+                title={
+                  <span>
+                    Stats <RiArrowDownSLine color="#007bff" />{" "}
+                  </span>
+                }
+                id="basic-nav-dropdown"
+                className="nav-link"
+              >
+                <NavDropdown.Item
+                  onClick={() => {
+                    setExpanded(false);
+                    navigate("activity");
+                  }}
+                >
+                  Activity
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  onClick={() => {
+                    setExpanded(false);
+                    navigate("ranking");
+                  }}
+                >
+                  Ranking
+                </NavDropdown.Item>
+              </NavDropdown>
+
               <Link
                 className="nav-link"
                 to={"#"}
@@ -120,41 +188,85 @@ const Header = () => {
 
             <Nav className="ms-auto">
               {/* for connect */}
-              { !wallet.connected && width > 600 ? 
-                <button className="metablog_gradient-button mx-2" onClick={connect}> <span>Connect Wallet</span> </button> 
-                : null 
-              }
+              {!wallet.connected && width > 600 ? (
+                <button
+                  className="metablog_gradient-button mx-2"
+                  onClick={connect}
+                >
+                  {" "}
+                  <span>Connect Wallet</span>{" "}
+                </button>
+              ) : null}
 
-              { width < 600 ? !wallet.connected  ? 
-                <div className="d-flex justify-content-end">
-                  <button style={{ width: "50%" }} className="metablog_gradient-button mb-3" onClick={connect}> <span>Connect Wallet</span></button>
-                </div> : 
-                 <div className="d-flex justify-content-end">
-                  <button style={{ width: "60%" }} className="metablog_gradient-button mb-3" onClick={disconnect}><span>Disconnect:</span>
-                    {wallet.address.slice(0, 5) + "..." + wallet.address.slice(-5)}
-                  </button>
-                </div> : null
-              }
+              {width < 600 ? (
+                !wallet.connected ? (
+                  <div className="d-flex justify-content-end">
+                    <button
+                      style={{ width: "50%" }}
+                      className="metablog_gradient-button mb-3"
+                      onClick={connect}
+                    >
+                      {" "}
+                      <span>Connect Wallet</span>
+                    </button>
+                  </div>
+                ) : (
+                  <div className="d-flex justify-content-end">
+                    <button
+                      style={{ width: "60%" }}
+                      className="metablog_gradient-button mb-3"
+                      onClick={disconnect}
+                    >
+                      
+                      {wallet.address.slice(0, 5) +
+                        "..." +
+                        wallet.address.slice(-5)}
+                    </button>
+                  </div>
+                )
+              ) : null}
 
               {/* for disconnect */}
-              { wallet.connected && width > 600 ? 
-                <button className="metablog_gradient-button mx-2" onClick={disconnect}> <span>Disconnect:</span>
-                  {wallet.address.slice(0, 5) + "..." + wallet.address.slice(-5)}
-                 </button> : null
-              }
+              {wallet.connected && width > 600 ? (
+                <button
+                  className="metablog_gradient-button mx-2"
+                  onClick={disconnect}
+                >
+                  {" "}
+                 
+                  {wallet.address.slice(0, 5) +
+                    "..." +
+                    wallet.address.slice(-5)}
+                </button>
+              ) : null}
 
-              { width < 576 ? 
-                <div className="d-flex justify-content-end"> 
-                  <button onClick={() =>{
-                    navigate("collectors")
-                    setExpanded(false)
-                    playSound() } } style={{ width: "40%" }} className="metablog_primary-button"><span>Log in</span></button>
+              {width < 576 ? (
+                <div className="d-flex justify-content-end">
+                  <button
+                    onClick={() => {
+                      navigate("collectors");
+                      setExpanded(false);
+                      playSound();
+                    }}
+                    style={{ width: "40%" }}
+                    className="metablog_primary-button"
+                  >
+                    <span>Log in</span>
+                  </button>
                 </div>
-              : <button onClick={() =>{
-                navigate("collectors")
-                setExpanded(false)
-                playSound() } } className="metablog_primary-button mx-2"> <span>Log in</span></button>
-              }
+              ) : (
+                <button
+                  onClick={() => {
+                    navigate("collectors");
+                    setExpanded(false);
+                    playSound();
+                  }}
+                  className="metablog_primary-button mx-2"
+                >
+                  {" "}
+                  <span>Log in</span>
+                </button>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

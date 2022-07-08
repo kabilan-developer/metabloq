@@ -37,7 +37,7 @@ export const LiveAuctionData = [
       createdby:"Garry Adam",
       collection:"Food for thoughts",
       price_dollar:"($1.073)",
-
+      outoff:"23 of 100"
     },
     {
       id:2,
@@ -56,6 +56,7 @@ export const LiveAuctionData = [
       createdby:"Garry Adam",
       collection:"Meta Pets",
       price_dollar:"($1.073)",
+      outoff:"23 of 100"
 
     },
     {
@@ -75,6 +76,7 @@ export const LiveAuctionData = [
       createdby:"Garry Adam",
       collection:"Football for life",
       price_dollar:"($1.073)",
+      outoff:"23 of 100"
 
     },
     {
@@ -94,6 +96,7 @@ export const LiveAuctionData = [
       createdby:"Garry Adam",
       collection:"Spaces that inspire",
       price_dollar:"($1.073)",
+      outoff:"23 of 100"
 
     },
     {
@@ -113,6 +116,7 @@ export const LiveAuctionData = [
       createdby:"Garry Adam",
       collection:"Black power cars",
       price_dollar:"($1.073)",
+      outoff:"23 of 100"
 
     },
     {
@@ -132,6 +136,7 @@ export const LiveAuctionData = [
       createdby:"Garry Adam",
       collection:"Luxury in Pink",
       price_dollar:"($1.073)",
+      outoff:"23 of 100"
 
     },
     {
@@ -151,6 +156,7 @@ export const LiveAuctionData = [
       createdby:"Garry Adam",
       collection:"Look Out",
       price_dollar:"($1.073)",
+      outoff:"23 of 100"
 
     },
     {
@@ -170,6 +176,7 @@ export const LiveAuctionData = [
       createdby:"Garry Adam",
       collection:"Hello Sunshine",
       price_dollar:"($1.073)",
+      outoff:"23 of 100"
 
     },
   ]

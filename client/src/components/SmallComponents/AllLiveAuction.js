@@ -7,12 +7,16 @@ import useWindowDimensions from '../../helpers/useWindowDimensions';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
 import { Col, Image, Row, Stack } from 'react-bootstrap'
+import PlacebidModal from '../placebidModal';
+import { useNavigate } from 'react-router-dom';
 
 
 const cardsPerPage = 4;
 let arrayForHoldingCards = [];
 
-function AllLiveAuction() {
+function AllLiveAuction(props) {
+    let {setPlaceModalOpen} = props;
+    const navigate = useNavigate()
     const [cardsToShow, setCardsToShow] = useState([]);
     const [next, setNext] = useState(4);
     const {width} = useWindowDimensions();
@@ -34,7 +38,13 @@ function AllLiveAuction() {
       const [playSound] = useSound(buttonSound)
       const [joinSound] = useSound(join)
 
+      const placebidBtnClick =()=>{
+          joinSound()
+          setPlaceModalOpen(true);
+      }
   return (
+      <>
+      <div>
     <Stack gap={3}>
         <Row>
             {
@@ -63,7 +73,8 @@ function AllLiveAuction() {
                                 </div>
                             </div>
                             <div className="liveauction_cards-imgwithtime my-2">
-                                <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"/>
+                                <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"
+                                onClick={() => navigate(`${data.id}`)}/>
                                 <div className="liveauction_cards-timebox d-flex justify-content-center align-items-center">
                                 <Image
                                     fluid
@@ -92,7 +103,7 @@ function AllLiveAuction() {
                                     </h6>
                                 </Col>
                                 <Col md="auto" lg="auto" xxl="auto" xl="auto">
-                                <button onClick={() => joinSound()} className="metablog_primary-filled-square-button">
+                                <button onClick={placebidBtnClick} className="metablog_primary-filled-square-button">
                                     <small>{data.button_name}</small>
                                 </button>
                                 </Col>
@@ -112,6 +123,10 @@ function AllLiveAuction() {
             </div>
             </Zoom>
         </Stack>
+        
+        </div>
+        <PlacebidModal {...props} joinSound={joinSound}/>
+        </>
   )
 }
 

@@ -4,6 +4,11 @@
     url("./fonts/lufga/LufgaRegular.ttf") format("truetype");
 }
 @font-face {
+  font-family: "LufgaBold";
+  src: local("LufgaBold"),
+    url("./fonts/lufga/LufgaBold.ttf") format("truetype");
+}
+@font-face {
   font-family: "Poppins-Regular";
   src: local("Poppins-Regular"),
     url("./fonts/poppins/Poppins-Regular.ttf") format("truetype");

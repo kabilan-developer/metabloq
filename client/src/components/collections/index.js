@@ -1,10 +1,10 @@
 import React from "react";
 import { Stack } from "react-bootstrap";
-import ExploreMore from "../SmallComponents/ExploreMore";
 import CollectionsCards from "./CollectionsCards";
 import "./Styles.css";
 import useWindowDimensions from "../../helpers/useWindowDimensions";
 import Fade from 'react-reveal/Fade';
+import { useNavigate } from "react-router-dom";
 
 const data = {
   name: "Popular Collections",
@@ -12,6 +12,7 @@ const data = {
 
 function Collections() {
   const { width } = useWindowDimensions();
+  const navigate = useNavigate()
   return (
     <Fade bottom>
     <div className="metabloq_container">
@@ -26,7 +27,10 @@ function Collections() {
               <h2 className="font-weight-bold poppins">{data.name}</h2>
             )}
           </div>
-          <ExploreMore />
+          <div onClick={()=> navigate("collects")} style={{cursor:'pointer'}}>
+          <h6 className="font-weight-bold">Explore More</h6>
+          <div className="primary_coloredunderline ms-auto"></div>
+          </div>
         </div>
         <CollectionsCards />
       </Stack>

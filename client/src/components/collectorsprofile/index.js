@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import {useNavigate} from 'react-router-dom'
 import useSound from 'use-sound';
 import buttonSound from '../../assets/audio/button.wav';
-import { useDispatch } from 'react-redux';
+import { conditionActionEdit } from '../../redux/condition/conditionAction';
 
 
 const coverpic = require('../../assets/profile/coverpic.png')
@@ -19,7 +19,6 @@ const profilepic = require('../../assets/profile/profilepic.png')
 function CollectorsProfile() {
     const [playSound] = useSound(buttonSound)
     const navigate = useNavigate()
-    const dispatch = useDispatch()
     const [copySuccess,setCopySuccess] = useState(null);
     const [showElement,setShowElement] = useState(false);
     const wallet = useSelector((state) => state.WalletConnect);
@@ -39,7 +38,6 @@ function CollectorsProfile() {
     const editProfileClick = ()=>{
         playSound();
         navigate("editprofile");
-
     }
   return (
     <Fade >

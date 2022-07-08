@@ -23,7 +23,7 @@
     right: 0;
     bottom: 0;
     top: 0;
-    margin: auto;
+    margin: 0 0 5% 0;
 }
 .waveWrapperInner {
     position: absolute;

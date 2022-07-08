@@ -5,12 +5,22 @@ import Fade from 'react-reveal/Fade';
 import { LiveAuctionData } from '../../components/liveauctions/LiveAuctionData';
 import useSound from 'use-sound';
 import join from '../../assets/audio/join.mp3';
+import PlacebidModal from '../placebidModal';
+import { useNavigate } from 'react-router-dom';
 
-const AuthorSort = ()=>{
+const AuthorSort = (props)=>{
+    let {setPlaceModalOpen} = props;
+    const navigate = useNavigate()
     const AuthorSort = [...LiveAuctionData].sort((a, b) => a.avatar_name > b.avatar_name ? 1 : -1);
     const {width} = useWindowDimensions();
     const [joinSound] = useSound(join)
+
+    const placebidBtnClick = ()=>{
+        joinSound()
+        setPlaceModalOpen(true);
+    }
     return (
+        <>
         <Stack gap={3}>
         <Row>
             {
@@ -39,7 +49,8 @@ const AuthorSort = ()=>{
                                 </div>
                             </div>
                             <div className="liveauction_cards-imgwithtime my-2">
-                                <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"/>
+                                <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"
+                                 onClick={() => navigate(`${data.id}`)}/>
                                 <div className="liveauction_cards-timebox d-flex justify-content-center align-items-center">
                                 <Image
                                     fluid
@@ -68,7 +79,7 @@ const AuthorSort = ()=>{
                                     </h6>
                                 </Col>
                                 <Col md="auto" lg="auto" xxl="auto" xl="auto">
-                                <button onClick={() => joinSound()} className="metablog_primary-filled-square-button">
+                                <button onClick={placebidBtnClick} className="metablog_primary-filled-square-button">
                                     <small>{data.button_name}</small>
                                 </button>
                                 </Col>
@@ -81,6 +92,8 @@ const AuthorSort = ()=>{
             }
         </Row>
         </Stack>
+        <PlacebidModal {...props} joinSound={joinSound}/>
+        </>
     )
 }
 export default AuthorSort;

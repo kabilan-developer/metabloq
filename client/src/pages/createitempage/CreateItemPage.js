@@ -8,7 +8,7 @@ function CreateItemPage() {
     <>
         <Stack gap={4}>
             <div className='createitempage_createitem'>
-                <h2 className='bold poppins'>Create Item</h2>
+                <h2 className='bold poppins'>Create NFT</h2>
             </div>
             <CreateItem/>
         </Stack>

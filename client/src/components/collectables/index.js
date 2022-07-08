@@ -1,6 +1,5 @@
 import React from "react";
 import { Stack } from "react-bootstrap";
-import ExploreMore from "../SmallComponents/ExploreMore";
 import CollectablesCards from "./CollectablesCards";
 import "./Styles.css";
 import useWindowDimensions from "../../helpers/useWindowDimensions";
@@ -26,7 +25,10 @@ function Collectables() {
               <h2 className="font-weight-bold">{data.name}</h2>
             )}
           </div>
-          <ExploreMore />
+          <div  style={{cursor:'pointer'}}>
+          <h6 className="font-weight-bold">Explore More</h6>
+        <div className="primary_coloredunderline ms-auto"></div>
+         </div>
         </div>
         <CollectablesCards />
       </Stack>

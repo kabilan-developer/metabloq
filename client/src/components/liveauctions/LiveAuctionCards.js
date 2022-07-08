@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { LiveAuctionData } from "./LiveAuctionData";
 import { Image, Row, Stack } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
@@ -9,10 +9,25 @@ import useWindowDimensions from '../../helpers/useWindowDimensions';
 import Bounce from 'react-reveal/Bounce';
 import useSound from 'use-sound';
 import join from '../../assets/audio/join.mp3';
+import PlacebidModal from "../placebidModal";
+import {useNavigate} from 'react-router-dom'
+
 
 function LiveAuctionCards() {
   const {width} = useWindowDimensions();
-  const [playSound] = useSound(join)
+  const [playSound] = useSound(join);
+  const navigate = useNavigate();
+
+  const [placeModalOpen, setPlaceModalOpen] = useState(false);
+
+  const placeModalClose = () =>{
+    setPlaceModalOpen(false);
+  } 
+
+  const onPlacebidClick = ()=>{
+    playSound();
+    setPlaceModalOpen(true);
+  }
   return (
     <>
       <Row>
@@ -50,7 +65,8 @@ function LiveAuctionCards() {
                     </div>
                   </div>
                   <div className="liveauction_cards-imgwithtime my-2">
-                    <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"/>
+                    <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"
+                    onClick={() => navigate(`${data.id}`)}/>
                     <div className="liveauction_cards-timebox d-flex justify-content-center align-items-center">
                       <Image
                         fluid
@@ -58,8 +74,6 @@ function LiveAuctionCards() {
                         alt="time"
                         height={15}
                         width={15}
-                      
-                      
                       />
                       <small className="mx-2">{data.time}</small>
                     </div>
@@ -78,9 +92,10 @@ function LiveAuctionCards() {
                       {data.price} {data.chain}
                     </h6>
                   </div>
-                  <button onClick={() => playSound()} className="metablog_primary-filled-square-button">
-                    <small>{data.button_name}</small>
+                  <button onClick={onPlacebidClick} className="metablog_primary-filled-square-button">
+                    <small>Place Bid</small>
                   </button>
+
                 </Stack>
               </div>
               </Bounce>
@@ -88,7 +103,12 @@ function LiveAuctionCards() {
           ))}
         </Swiper>
       </Row>
-      <Row></Row>
+      <PlacebidModal 
+        placeModalOpen={placeModalOpen}
+        setPlaceModalOpen={setPlaceModalOpen}
+        placeModalClose = {placeModalClose}
+        playSound={playSound}
+      />
     </>
   );
 }

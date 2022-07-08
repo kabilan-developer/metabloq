@@ -4,10 +4,12 @@ import { Col, Image, Row, Stack, Tab, Tabs } from 'react-bootstrap';
 import useWindowDimensions from '../../helpers/useWindowDimensions';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
-import { NFTDetailsData } from './NFTDetailsData';
 import useSound from 'use-sound';
 import buttonSound from '../../assets/audio/button.wav';
 import join from '../../assets/audio/join.mp3';
+import PlacebidModal from '../placebidModal';
+import { useNavigate } from 'react-router-dom';
+import { LiveAuctionData } from '../liveauctions/LiveAuctionData';
 
 const cardsPerPage = 4;
 let arrayForHoldingCards = [];
@@ -15,9 +17,10 @@ const NFTDetailsList = ()=>{
     const [cardsToShow, setCardsToShow] = useState([]);
     const [next, setNext] = useState(4);
     const {width} = useWindowDimensions();
+    const navigate = useNavigate()
 
     const loopWithSlice = (start, end) => {
-        const slicedCards = NFTDetailsData.slice(start, end);
+        const slicedCards = LiveAuctionData.slice(start, end);
         arrayForHoldingCards = [...arrayForHoldingCards, ...slicedCards];
         setCardsToShow(arrayForHoldingCards);
     };
@@ -32,7 +35,18 @@ const NFTDetailsList = ()=>{
       };
       const [playSound] = useSound(buttonSound)
       const [joinSound] = useSound(join)
+
+      const [placeModalOpen, setPlaceModalOpen] = useState(false);
+
+      const placeModalClose = () => {
+        setPlaceModalOpen(false);
+      };
+      const placebidBtnClick  =()=>{
+        setPlaceModalOpen(true)
+        joinSound();
+      }
     return (
+        <>
         <Stack gap={3}>
         <Row>
             {
@@ -42,7 +56,8 @@ const NFTDetailsList = ()=>{
                          <div className="liveauction_cards metablog_cards h-100" key={data.id}>
                             <Stack gap={2}>
                             <div className="liveauction_cards-imgwithtime my-2">
-                                <Image fluid src={data.image} alt="square" className="metabloq_img img-zoom-animation"/>
+                                <Image fluid src={data.avatar} alt="square" className="metabloq_img img-zoom-animation"
+                                onClick={() => navigate(`${data.id}`)}/>
                             </div>
                             <div className=''>
                                 <div className='d-flex'>
@@ -63,7 +78,7 @@ const NFTDetailsList = ()=>{
                                 <font size="2" className='ms-auto secondary-text poppins'>{data.outoff}</font>
                                 </div>
                             </div>
-                            <button onClick={() => joinSound()} className="metablog_primary-filled-square-button">
+                            <button onClick={placebidBtnClick} className="metablog_primary-filled-square-button">
                                 <small>Place Bid</small>
                             </button>
                             </Stack>
@@ -81,9 +96,17 @@ const NFTDetailsList = ()=>{
             </div>
             </Zoom>
         </Stack>
+        <PlacebidModal 
+        placeModalOpen={placeModalOpen}
+        setPlaceModalOpen={setPlaceModalOpen}
+        placeModalClose={placeModalClose}
+        joinSound={joinSound}/>
+        </>
     )
 }
 function NFTDetailsCards({collectors}) {
+    
+
   return (
     <>
     <div className='nftdetails_cards-menu '>
@@ -100,7 +123,7 @@ function NFTDetailsCards({collectors}) {
         <div className='ms-auto nftdetails_cards-tabs'>
             <Tabs defaultActiveKey="All" id="uncontrolled-tab-example" className="mb-3">
                     <Tab eventKey="All" title="All">
-                        <NFTDetailsList/>
+                        <NFTDetailsList />
                     </Tab>
                     <Tab eventKey="Art" title="Art">
                         Art
