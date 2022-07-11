@@ -10,7 +10,7 @@ import useSound from 'use-sound';
 
 
 function WebFilter(props) {
-    let {horizontalLabels,setShowFilter,rangeSliderChange,rangeSlider,setFilterDrawer,collections} = props;
+    let {horizontalLabels,setShowFilter,rangeSliderChange,rangeSlider,setFilterDrawer,collections,collectionhome} = props;
     const [playSound] = useSound(buttonSound);
 
     const handleApplyClick = ()=>{
@@ -65,7 +65,40 @@ function WebFilter(props) {
                 />
             </div>
         </div>
-        <div className=''>
+        {
+            collectionhome && 
+            <div className=''>
+            <div>Status</div>
+            <Row >
+            <Col onClick={() => playSound()} className='nftcollection_filter-div m-2'>
+                <font size="2">All items</font>
+            </Col>
+            <Col onClick={() => playSound()} className='nftcollection_filter-div m-2'>
+                <font size="2">BuyNow</font>
+            </Col>
+            <Col onClick={() => playSound()} className='nftcollection_filter-div m-2'>
+                <font size="2">OnAuction</font>
+            </Col>
+            </Row>
+            </div>
+        }
+        {
+            collectionhome && 
+            <div className=''>
+            <div>Sort By</div>
+            <Row >
+            <Col onClick={() => playSound()} className='nftcollection_filter-div m-2'>
+                <font size="2">Highest First</font>
+            </Col>
+            <Col onClick={() => playSound()} className='nftcollection_filter-div m-2'>
+                <font size="2">Lowest First</font>
+            </Col>
+            </Row>
+        </div>
+        }
+        {
+            !collectionhome &&
+            <div className=''>
             <div>Creator</div>
             <div className=''>
                 <Form.Select aria-label="Default select example">
@@ -76,6 +109,8 @@ function WebFilter(props) {
                 </Form.Select>
             </div>
         </div>
+        }
+       
         <Row xxl={10} xl={10} lg={10} md={10}>
             <Col>
             <button className='nftcollection_mobile-category'>

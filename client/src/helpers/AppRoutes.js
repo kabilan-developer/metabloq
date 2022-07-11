@@ -17,6 +17,7 @@ import SignUpPage from "../pages/signuppage/SignUpPage";
 import SignInPage from "../pages/signinpage/SignInPage";
 import Ranking from "../components/ranking";
 import Activity from "../components/activity";
+import CollectablesHome from "../components/collectablesHome";
 
 
 function AppRoutes() {
@@ -35,7 +36,7 @@ function AppRoutes() {
             <Route path="collections" element={<NFTCollectionPage collections="collections"/>}/>
             <Route path="assets/:id" element={<NFTDetailsPage LiveAuctionData={LiveAuctionData}/>}/>
             <Route path="collectors" element={<CollectorsPage/>}/>
-            <Route path="collectors/activity" element={<Activity/>}/>
+            <Route path="collectors/activity" element={<Activity myprofile="myprofile"/>}/>
             <Route path="collectors/:id" element={<NFTDetailsPage LiveAuctionData={LiveAuctionData}/>}/>
             <Route path="collectors/editprofile" element={<EditProfilePage/>}/>
             <Route path="createcollection" element={<CreateCollectionPage/>}/>
@@ -44,6 +45,7 @@ function AppRoutes() {
             <Route path="signin" element={<SignInPage/>}/>
             <Route path="ranking" element={<Ranking/>}/>
             <Route path="activity" element={<Activity/>}/>
+            <Route path="collections/collectionhome" element={<CollectablesHome/>}/>
             
             <Route path="*" element={<h1 className="text-center">404 NOT FOUND</h1>}/>
         </Routes>

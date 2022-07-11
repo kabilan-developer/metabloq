@@ -8,8 +8,8 @@ const useStyles = makeStyles((theme) =>
 				top: '50%',
 				left: '50%',
 				transform: 'translate(-50%, -50%)',
-				width: '40%',
-                padding: '2.3% 0',
+				width: '45%',
+                padding: '0 0 1% 0',
 				backgroundColor: 'white',
 				boxShadow: 'none',
                 borderRadius: '22px',
@@ -18,6 +18,17 @@ const useStyles = makeStyles((theme) =>
                 }
 			},
 		},
+        modalHeader:{
+            '&.MuiBox-root': {
+                background: 'linear-gradient(90deg, #6DC6FE 0%, #0295FA 100%)',
+                display:'flex',
+                justifyContent:'space-around',
+                alignItems:'center',
+                color:'white',
+                borderRadius: '22px 22px 0 0 ',
+                padding:'2.5% 0'
+            }
+        },
         walletTitle: {
             '&.MuiTypography-root': {
                 textAlign: 'center',
@@ -26,13 +37,16 @@ const useStyles = makeStyles((theme) =>
         },
         divider: {
             '&.MuiBox-root': {
-                marginTop: '5%',
+                
                 borderBottom: '1px solid #E0E0E0',
             },
         },
         itemContainer: {
             '&.MuiBox-root': {
-                padding: '2% 17%',
+                padding: '5%',
+                margin:'2% 12% 0 12%',
+                backgroundColor:'#F9F9F9',
+                borderRadius:'1em',
             },
         },
         radioContainer: {
@@ -45,8 +59,9 @@ const useStyles = makeStyles((theme) =>
                 paddingLeft: '4%',
                 height: '65px',
                 marginTop: '16px',
-                border: '1px solid #E0E0E0',
-                borderRadius: '8px',
+                borderRadius: '16px',
+                backgroundColor:'white',
+                boxShadow: '0 5px 21px 0 rgba(179,187,193,0.2)'
             }
         },
         radioTitle: {
@@ -75,7 +90,6 @@ const useStyles = makeStyles((theme) =>
                 flexDirection: 'row',
                 justifyContent: 'center',
                 padding: '0 25%',
-                marginTop: '8%',
             },
         },
         btnNext: {
@@ -83,9 +97,8 @@ const useStyles = makeStyles((theme) =>
                 height: '51px',
                 width: '100%',
                 color: 'white',
-                textDecorationLine: 'underline',
                 borderRadius: '30px',
-                backgroundColor: '#1969FF',
+                background: 'linear-gradient(90deg, #6DC6FE 0%, #0295FA 100%)',
             },
         },
 	})

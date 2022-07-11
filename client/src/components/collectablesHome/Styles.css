@@ -1,0 +1,18 @@
+.collections_home-wrapper{
+
+}
+
+.collections_home-banner{
+
+    background-color: lightgray;
+    border-radius: 1em 1em 0 0 ;
+}
+.collections_home-info{
+    width: 100%;
+    background-color: red;
+}
+.responsive-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

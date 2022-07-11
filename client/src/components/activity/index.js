@@ -77,7 +77,7 @@ const days = [
   {id:4,days:"7 Days"},
   {id:5,days:"Today"}
 ]
-function Activity() {
+function Activity({myprofile}) {
   return (
     <div className="metabloq_container mt-sm-5">
       <Stack gap={4}>
@@ -93,7 +93,11 @@ function Activity() {
               </Form.Select>
               </Stack>
         </div>
-          <h1 className="text-center lufga-bold">Activity</h1> 
+        {
+          myprofile ? <h1 className="text-center lufga-bold">My Activity</h1> :
+          <h1 className="text-center lufga-bold">Activity</h1>
+        }
+          
         <small className="secondary-text text-center w-100">
           Top NFTs on ARTZ, ranked by volume, Floor prize and others
         </small>

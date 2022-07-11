@@ -19,6 +19,7 @@
 .waveWrapper {
     overflow: hidden;
     position: absolute;
+    width: 100%;
     left: 0;
     right: 0;
     bottom: 0;
@@ -30,6 +31,7 @@
     width: 100%;
     overflow: hidden;
     height: 100%;
+    width: 100%;
     bottom: -1px;
     background-image: linear-gradient(transparent 0 0) padding-box,
     linear-gradient(-90deg, #0046b8 0%, #0046b8 45.31%, #0046b8 100%)border-box;

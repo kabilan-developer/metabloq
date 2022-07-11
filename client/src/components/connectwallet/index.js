@@ -14,6 +14,7 @@ import { useDispatch,
   // useSelector
  } from "react-redux";
 import { connectWallet } from "../../redux/WalletAction";
+import {MdOutlineCancel} from 'react-icons/md';
 
 function ConenctWallet({ openWallet, setOpenWallet }) {
   // const wallet = useSelector((state) => state.WalletConnect);
@@ -67,30 +68,35 @@ function ConenctWallet({ openWallet, setOpenWallet }) {
     <Box>
       <Modal open={openWallet} onClose={() => setOpenWallet(false)}>
         <Box className={classes.walletContainer}>
-          <Typography variant="h4" className={classes.walletTitle}>
-            Connect your wallet
-          </Typography>
+          <Box className={classes.modalHeader}>
+              <Typography variant="h4" className={classes.walletTitle}>
+                Connect your wallet
+              </Typography>
+              <MdOutlineCancel size={40} onClick={() => setOpenWallet(false)}/>
+          </Box>
+    
+
           <Box className={classes.divider} />
           <Box className={classes.itemContainer}>
             {walletData.map((item, index) =>
               <Box className={classes.radioContainer} key={index}>
                 <Box className={classes.radioTitle}>
-                  <Radio
+                <CardMedia
+                  component="img"
+                  image={item.icon}
+                  className={classes.icon}
+                />
+                  <Typography variant="body1" className={classes.title}>
+                    {item.title}
+                  </Typography>
+                </Box>
+                <Radio
                     checked={selectedValue === item.title}
                     onChange={()=>handleChange(item)}
                     value={item.title}
                     name="radio-buttons"
                     inputProps={{ "aria-label": item.title }}
                   />
-                  <Typography variant="body1" className={classes.title}>
-                    {item.title}
-                  </Typography>
-                </Box>
-                <CardMedia
-                  component="img"
-                  image={item.icon}
-                  className={classes.icon}
-                />
               </Box>
             )}
           </Box>
@@ -102,7 +108,7 @@ function ConenctWallet({ openWallet, setOpenWallet }) {
                 // navigate(`/token?wallet=${selectedValue}`)
               }
             >
-              Next
+              Connect Wallet
             </Button>
           </Box>
         </Box>

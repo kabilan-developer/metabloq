@@ -18,7 +18,7 @@ function BuildingCollection(props) {
           <Col xxl={4} xl={4} lg={4} md={4} sm={12} xs={12} className="mb-3">
             <Fade bottom>
               <div className="collections_cards metablog_cards" key={data.id}
-              onClick={()=> navigate("assets")}>
+              onClick={()=> navigate("collectionhome")}>
                 <Stack gap={2}>
                   <Row className="collections_cards-grid">
                     <Col>

@@ -16,7 +16,7 @@ function WearablesCollection(props) {
         .filter((data)=> data.c_name === wear)
         .map((data) => (
           <Col xxl={4} xl={4} lg={4} md={4} sm={12} xs={12} className="mb-3"
-          onClick={()=> navigate("assets")}>
+          onClick={()=> navigate("collectionhome")}>
             <Fade bottom>
               <div className="collections_cards metablog_cards" key={data.id}>
                 <Stack gap={2}>

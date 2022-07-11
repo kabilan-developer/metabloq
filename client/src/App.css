@@ -5,7 +5,6 @@ body {
   padding: 0;
   font-family: "LufgaRegular" !important;
   word-wrap: break-word;
-  overflow: hidden;
 }
 .App {
   max-height: 100%;
@@ -187,5 +186,14 @@ body {
   .metabloq_container {
     padding: 0 5%;
   }
+  .App {
+    font-size: calc(15px + 0.390625vw);
+  }
+  
 }
 
+@media(min-width:968px) and (max-width:1400px){
+  .App {
+    font-size: calc(11px + 0.390625vw);
+  }
+}

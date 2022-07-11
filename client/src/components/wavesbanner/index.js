@@ -16,11 +16,11 @@ function WavesBanner(props) {
         <div class="waveWrapper waveAnimation">
           <div class="waveWrapperInner bgTop">
               <div class="waveWrapperInner bgMiddle">
-                <div class="wave waveMiddle" style={{backgroundImage: `url(${wave1})`}}></div>
+                <div class="wave waveMiddle" style={{backgroundImage: `url(${wave1})`,backgroundSize:'30% 100%'}}></div>
               </div>
               <br/><br/><br/><br/><br/><br/>
               <div class="waveWrapperInner bgBottom">
-                <div class="wave waveBottom" style={{backgroundImage: `url(${wave2})`}}></div>
+                <div class="wave waveBottom" style={{backgroundImage: `url(${wave2})`,backgroundSize:'30% 100%'}}></div>
               </div>
         </div>
         </div>
