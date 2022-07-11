@@ -26,7 +26,7 @@ function CollectablesCards() {
               </div>
               <br/>
               <div className="text-center">
-                <h6 className="font-weight-bold">{data.name}</h6>
+                <div className="font-weight-bold">{data.name}</div>
                 <small className="secondary-text">
                   owned by <small className="font-weight-bold text-dark">{data.sub_title}</small>
                 </small>

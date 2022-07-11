@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import "./Styles.css";
-import { Col, Image, Row, Stack } from "react-bootstrap";
+import { Stack } from "react-bootstrap";
 import { BiShow, BiHide } from "react-icons/bi";
-
-const google = require("../../assets/login/google.png");
-const facebook = require("../../assets/login/facebook.png");
-const linkedin = require("../../assets/login/linkedin.png");
-const twitter = require("../../assets/login/twitter.png");
 
 function SignUp() {
   const [username, setusername] = useState("");
@@ -16,7 +11,7 @@ function SignUp() {
   const [viewPwd, setViewPwd] = useState(true);
 
   const viewIconClick = () => {
-    if (viewPwd == false) {
+    if (viewPwd === false) {
       setViewPwd(true);
     } else {
       setViewPwd(false);

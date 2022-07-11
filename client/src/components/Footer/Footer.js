@@ -27,7 +27,7 @@ function Footer() {
               </small>
             </Col>
             <Col xxl={2} xl={2} lg={2} md={2} sm={12} xs={12} className="mb-3">
-              <h5 className="font-weight-bold poppins mb-3">About Us</h5>
+              <div className="font-weight-bold poppins mb-3">About Us</div>
               <Stack gap={2}>
                 <small className="secondary-text poppins">About</small>
                 <small className="secondary-text poppins">Ecosystem</small>
@@ -41,7 +41,7 @@ function Footer() {
               </Stack>
             </Col>
             <Col xxl={2} xl={2} lg={2} md={2} sm={12} xs={12} className="mb-3">
-              <h5 className="font-weight-bold poppins mb-3">Contact</h5>
+              <div className="font-weight-bold poppins mb-3">Contact</div>
               <Stack gap={2}>
                 <small className="secondary-text poppins">
                   info@metabloq.com
@@ -55,7 +55,7 @@ function Footer() {
               </Stack>
             </Col>
             <Col xxl={2} xl={2} lg={2} md={2} sm={12} xs={12} className="mb-3">
-              <h5 className="font-weight-bold poppins mb-3">Policies</h5>
+              <div className="font-weight-bold poppins mb-3">Policies</div>
               <Stack gap={2}>
                 <small className="secondary-text poppins">Cookie Policy</small>
                 <small className="secondary-text poppins">Privacy Policy</small>
@@ -65,10 +65,10 @@ function Footer() {
               </Stack>
             </Col>
             <Col xxl={4} xl={4} lg={4} md={4} sm={12} xs={12} className="mb-3">
-              <h5 className="font-weight-bold poppins mb-3">
+              <div className="font-weight-bold poppins mb-3">
                 Signup for our newsletter to get the latest information in your
                 inbox
-              </h5>
+              </div>
               <Stack gap={2}>
                 <small className="secondary-text poppins">
                   No spam message, your email is safe with us

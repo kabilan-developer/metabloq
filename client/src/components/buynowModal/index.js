@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import { Image, Stack } from "react-bootstrap";
-import useSound from 'use-sound';
-import connectWallet from '../../assets/audio/connectWallet.mp3';
 
 const smallstar = require('../../assets/smallstar.png')
 const bigstar = require('../../assets/bigstar.png')
@@ -22,7 +20,7 @@ const style = {
   };
   
 function BuynowModal(props) {
-  let { buyModalOpen, setBuyModalOpen,buyModalClose,playSound,joinSound } = props;
+  let { buyModalOpen, setBuyModalOpen,buyModalClose,playSound} = props;
   const [successModal,setSuccessModal] = useState(false);
 
   const successModalClose = ()=>{
@@ -34,7 +32,7 @@ function BuynowModal(props) {
     // setSuccessModal(true);
     playSound();
   }
-  const [success] = useSound(connectWallet)
+
   return (
     <>
       <Modal

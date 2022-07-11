@@ -1,22 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Row, Col, Stack, Image } from "react-bootstrap";
 import { CollectionsData } from "../collections/CollectionsData";
 import { AiTwotoneHeart } from "react-icons/ai";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
-import useSound from "use-sound";
-import buttonSound from "../../assets/audio/button.wav";
 import { useNavigate } from "react-router-dom";
 
 function MetapetsCollection(props) {
   let { meta } = props;
-  const [playSound] = useSound(buttonSound);
   const navigate = useNavigate();
   return (
     <Stack gap={3}>
       <Row>
         {CollectionsData
-        .filter((data)=> data.c_name == meta)
+        .filter((data)=> data.c_name === meta)
         .map((data) => (
           <Col xxl={4} xl={4} lg={4} md={4} sm={12} xs={12} className="mb-3">
             <Fade bottom>

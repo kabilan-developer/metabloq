@@ -7,7 +7,6 @@ import './Styles.css'
 import Fade from 'react-reveal/Fade';
 import useSound from 'use-sound';
 import buttonSound from '../../assets/audio/button.wav';
-import connectWallet from '../../assets/audio/connectWallet.mp3';
 import join from '../../assets/audio/join.mp3';
 import {useParams} from 'react-router-dom';
 import PlacebidModal from '../placebidModal'
@@ -43,7 +42,6 @@ const [buyModalOpen, setBuyModalOpen] = useState(false);
     setBuyModalOpen(true);
     joinSound();
   }
-  const [success] = useSound(connectWallet)
   return (
     <div className='metabloq_container nftdetails_container'>
         <Stack gap={5}>
@@ -84,7 +82,7 @@ const [buyModalOpen, setBuyModalOpen] = useState(false);
                     </div>
                 </div>
                 <div>
-                    <h6>Description</h6>
+                    <div>Description</div>
                     <small className='secondary-text'>{data.description}</small>
                 </div>
                 <div className='d-flex'>

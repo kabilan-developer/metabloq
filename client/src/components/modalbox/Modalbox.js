@@ -1,4 +1,4 @@
-import React, { useState,CSSProperties  } from "react"
+import React, { useState } from "react"
 import Select from 'react-select'
 import { Grid, Button, Modal, Typography, Switch, FormControlLabel } from '@mui/material'
 import { Styles } from './styles'
@@ -38,9 +38,6 @@ function Modalbox(props) {
         { value: '9 sec', label: '9 Sec'}
     ]
 
-    const options = [
-        { value: 'XDC', label: 'XDC', },
-    ]
     return (
         <div>
             <Modal open={show} onClose={() => setShow(false)} aria-labelledby="parent-modal-title" aria-describedby="parent-modal-description" sx={{ overflowY: 'scroll' }}>

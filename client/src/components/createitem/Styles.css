@@ -25,7 +25,7 @@
   width: 100%;
   padding: 0.5em 1em;
   -moz-padding-start: calc(0.75rem - 3px);
-  font-size: 1rem;
+
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -50,7 +50,6 @@
 }
 
 .createitem_input::placeholder{
-  font-size: .7em;
   color: #838383;
 }
 

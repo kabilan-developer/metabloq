@@ -29,7 +29,7 @@ function LiveAuctions() {
           }
         </div>
         <div onClick={()=> navigate("/liveauction")} style={{cursor:'pointer'}}>
-        <h6 className="font-weight-bold">Explore More</h6>
+        <div className="font-weight-bold">Explore More</div>
         <div className="primary_coloredunderline ms-auto"></div>
         </div>
       </div>

@@ -54,7 +54,7 @@ function HowItWorks() {
                   <span className="howitworks_cards-watermark">{data.num}</span>
                 </div>
                 <div>
-                  <h5 className="font-weight-bold">{data.title}</h5>
+                  <div className="font-weight-bold">{data.title}</div>
                   <p className="secondary-text">{data.content}</p>
                 </div>
               </Stack>

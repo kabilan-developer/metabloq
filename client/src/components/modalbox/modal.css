@@ -68,7 +68,6 @@
     display: block;
     padding: 15px 45px;
     border-radius: 100px;
-    font-size: 18px;
     background-image: url('../../assets/Nftdetails/Buttonoffer.svg');
     color: white;
     transform: translateY(-6px);
@@ -77,9 +76,7 @@
     transform: translateY(-2px);
   }
   @media (max-width: 600px){
-    .listsalespan {
-      font-size: 14px;
-    }
+
   }
 
 

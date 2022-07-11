@@ -9,7 +9,6 @@ import Bounce from 'react-reveal/Bounce';
 
 const time_icon = require('../../assets/auction/time_icon.png')
 const avatar1 = require('../../assets/profilepics/face7.jpg') 
-const nft2 = require('../../assets/nfts/8.png')
 const fixed = require('../../assets/createitem/fixed.png')
 const timed_auction = require('../../assets/createitem/timed_auction.png')
 const open_bids = require('../../assets/createitem/open_bids.svg')
@@ -38,7 +37,7 @@ function CreateItem() {
         <Row>
             <Col xxl={3} xl={3} lg={3} md={3} sm={12} xs={12} className="h-100 mb-3" >
             <Bounce>
-                <h6 className='bold'>Preview Item</h6>
+                <div className='bold'>Preview Item</div>
                 <div className="liveauction_cards metablog_cards h-100">
                         <Stack gap={2}>
                             <div className="d-flex justify-content-between">
@@ -72,16 +71,16 @@ function CreateItem() {
                                 </div>
                             </div>
                             <div>
-                                <h6>{title ? title : "Abstract Nature"}</h6> 
+                                <div>{title ? title : "Abstract Nature"}</div> 
                             </div>
                             <Row className='d-flex justify-content-center align-items-center'>
                                 <Col>  
                                     <font size="1">Current Bid</font>                               
-                                    <h6
+                                    <div
                                     className="font-weight-bold"
                                     style={{ color: "#1C83E5" }}>
                                     {price ? price : "5.1 XDC"}
-                                    </h6>
+                                    </div>
                                 </Col>
                                 <Col md="auto" lg="auto" xxl="auto" xl="auto" sm="auto" xs="auto">
                                 <button onClick={() => playSound()} className="metablog_primary-filled-square-button">
@@ -101,13 +100,13 @@ function CreateItem() {
                     <Bounce>
                         <Stack gap={4} >
                         <div>
-                            <h6 className='bold'>Title Name</h6>
+                            <div className='bold'>Title Name</div>
                             <input type="text" placeholder='eg.The Floating Pilot' className='createitem_input'
                             value={title} onChange={(e)=> setTitle(e.target.value)}
                             />
                         </div>
                         <div>
-                            <h6 className='bold'>Price</h6>
+                            <div className='bold'>Price</div>
                             <input type="text" placeholder='Enter price for one item (XDC)' className='createitem_input'
                             value={price} onChange={(e)=> setPrice(e.target.value)}
                             />
@@ -133,7 +132,7 @@ function CreateItem() {
                     <Col style={{padding:width < 600 && 5}}>
                     <Bounce>
                         <div className='createitem_select'>
-                            <h6 className='bold'>Collection</h6>
+                            <div className='bold'>Collection</div>
                             <Form.Select aria-label="Default select example">
                                 <option style={{fontSize:'.7em'}}>My Space</option>
                                 <option value="1">One</option>
@@ -146,7 +145,7 @@ function CreateItem() {
                     <Col style={{padding:width < 600 && 5}}>
                     <Bounce>
                         <div className='createitem_select'>
-                            <h6 className='bold'>Royalties</h6>
+                            <div className='bold'>Royalties</div>
                             <Form.Select aria-label="Default select example">
                                 <option>5%</option>
                                 <option value="1">One</option>
@@ -159,7 +158,7 @@ function CreateItem() {
                 </Row>
                 <Row>
                 
-                    <h6 className='bold'>Method</h6>
+                    <div className='bold'>Method</div>
                     <Col xxl={3} xl={3} lg={3} md={3} sm={4} xs={4} 
                     style={{padding: width < 600 && 5}}>
                         <Bounce>
@@ -193,7 +192,7 @@ function CreateItem() {
                     <Col>
                     <Bounce>
                         <div>
-                            <h6 className='bold'>Description</h6>
+                            <div className='bold'>Description</div>
                             <textarea type="textarea" className="createitem_input" placeholder="eg.Limited Outspace series"/>
                         </div>
                     </Bounce>

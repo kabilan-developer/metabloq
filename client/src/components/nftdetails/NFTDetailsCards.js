@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Styles.css'
-import { Col, Image, Row, Stack, Tab, Tabs } from 'react-bootstrap';
+import { Col, Image, Row, Stack } from 'react-bootstrap';
 import useWindowDimensions from '../../helpers/useWindowDimensions';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
@@ -37,11 +37,6 @@ const NFTDetailsList = (props)=>{
       const [playSound] = useSound(buttonSound)
       const [joinSound] = useSound(join)
 
-      const [placeModalOpen, setPlaceModalOpen] = useState(false);
-      const placeModalClose = () => {
-        setPlaceModalOpen(false);
-      };
-
       //for puton sale modal
       const [show,setShow] = useState(false);
       const [nftsImg,setNftsImg] = useState('')
@@ -63,23 +58,23 @@ const NFTDetailsList = (props)=>{
                                 <div className='d-flex'>
                                 {
                                 width < 576 ? 
-                                <h6>{data.avatar_name.slice(0, 12) + (data.avatar_name.length > 12 ? ".." : "")}</h6> :
-                                <h6>{data.avatar_name.slice(0, 20) + (data.avatar_name.length > 20 ? ".." : "")}</h6>
+                                <div>{data.avatar_name.slice(0, 12) + (data.avatar_name.length > 12 ? ".." : "")}</div> :
+                                <div>{data.avatar_name.slice(0, 20) + (data.avatar_name.length > 20 ? ".." : "")}</div>
                                 }
                                 <span className='ms-auto font-weight-bold'>...</span>
                                 </div>
                                 <div className='d-flex'>
-                                <h6
+                                <div
                                 className="font-weight-bold"
                                 style={{ color: "#1C83E5" }}
                                 >
                                 {data.price} {data.chain}
-                                </h6>
+                                </div>
                                 <font size="2" className='ms-auto secondary-text poppins'>{data.outoff}</font>
                                 </div>
                             </div>
                             { 
-                                data.button_name2 == "Place a Bid" ?
+                                data.button_name2 === "Place a Bid" ?
                                 <button onClick={()=>{
                                     setShow(true)
                                     joinSound()
@@ -90,7 +85,7 @@ const NFTDetailsList = (props)=>{
                                 <small>{data.button_name2}</small> :
                                 <small>{data.profile_button}</small>}
                                 </button> : null 
-                                || data.button_name2 == "Make Offer" ? 
+                                || data.button_name2 === "Make Offer" ? 
                                 <button onClick={()=>{
                                     setShow(true)
                                     joinSound()
@@ -101,7 +96,7 @@ const NFTDetailsList = (props)=>{
                                 <small>{data.button_name2}</small> :
                                 <small>{data.profile_button}</small>}
                                 </button> : null 
-                                || data.button_name2 == "Buy" ? 
+                                || data.button_name2 === "Buy" ? 
                                 <button onClick={()=>{
                                     setShow(true)
                                     joinSound()
@@ -112,7 +107,7 @@ const NFTDetailsList = (props)=>{
                                 <small>{data.button_name2}</small> :
                                 <small>{data.profile_button}</small>}
                                 </button> : null 
-                                || data.button_name2 == "Put On Sale" ?
+                                || data.button_name2 === "Put On Sale" ?
                                 <button onClick={()=>{
                                     setShow(true)
                                     joinSound()
@@ -123,7 +118,7 @@ const NFTDetailsList = (props)=>{
                                 <small>{data.button_name2}</small> :
                                 <small>{data.profile_button}</small>}
                                 </button> : null 
-                                || data.button_name2 == "On Sale" ? 
+                                || data.button_name2 === "On Sale" ? 
                                 <button onClick={()=>{
                                     setShow(true)
                                     joinSound()

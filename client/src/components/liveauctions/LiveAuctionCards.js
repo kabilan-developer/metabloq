@@ -81,16 +81,16 @@ function LiveAuctionCards() {
                   <div>
                     {
                       width < 576 ? 
-                      <h6>{data.name.slice(0, 12) + (data.name.length > 12 ? ".." : "")}</h6> :
-                      <h6>{data.name.slice(0, 20) + (data.name.length > 20 ? ".." : "")}</h6>
+                      <div>{data.name.slice(0, 12) + (data.name.length > 12 ? ".." : "")}</div> :
+                      <div>{data.name.slice(0, 20) + (data.name.length > 20 ? ".." : "")}</div>
                     }
                     
-                    <h6
+                    <div
                       className="font-weight-bold"
                       style={{ color: "#1C83E5" }}
                     >
                       {data.price} {data.chain}
-                    </h6>
+                    </div>
                   </div>
                   <button onClick={onPlacebidClick} className="metablog_primary-filled-square-button">
                     <small>Place Bid</small>

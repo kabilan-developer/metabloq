@@ -4,19 +4,14 @@ import {Row,Col, Image, Stack, Form} from 'react-bootstrap';
 import useSound from 'use-sound';
 import buttonSound from '../../assets/audio/button.wav';
 import {RiUploadCloudFill} from 'react-icons/ri';
-import useWindowDimensions from '../../helpers/useWindowDimensions'
 import Bounce from 'react-reveal/Bounce';
 import { AiTwotoneHeart } from 'react-icons/ai';
 
 
-const nft2 = require('../../assets/nfts/8.png')
-const img3 = require('../../assets/collectables/collectables2.png');
-const avatar1 = require('../../assets/profilepics/face4.jpg')
 const empty = require('../../assets/empty.png')
 
 function CreateCollection() {
     const [playSound] = useSound(buttonSound)
-    const {width} = useWindowDimensions()
     const [title,setTitle] = useState('')
     const [bannerImg,setBannerImg] = useState(empty);
     const [featuredImg,setFeaturedImg] = useState(empty);
@@ -59,7 +54,7 @@ function CreateCollection() {
         <Row>
             <Col xxl={3} xl={3} lg={3} md={3} sm={12} xs={12} className="h-100 mb-3" >
             <Bounce>
-                <h6 className='bold'>Preview Item</h6>
+                <div className='bold'>Preview Item</div>
                 <div className="collectables_cards metablog_cards">
             <Stack gap={2}>
               <div className="collectables_cards-imgsection">
@@ -76,7 +71,7 @@ function CreateCollection() {
               </div>
               <br/>
               <div className="text-center">
-                <h6 className="font-weight-bold">{title ? title : "Cute Things"}</h6>
+                <div className="font-weight-bold">{title ? title : "Cute Things"}</div>
                 <small className="secondary-text">
                   Created by <small className="font-weight-bold text-dark">Sera Cobalt</small>
                 </small>
@@ -93,13 +88,13 @@ function CreateCollection() {
                     <Bounce>
                         <Stack gap={4} >
                         <div>
-                            <h6 className='bold'>Title Name</h6>
+                            <div className='bold'>Title Name</div>
                             <input type="text" placeholder='eg.The Floating Pilot' className='createitem_input'
                             value={title} onChange={(e)=> setTitle(e.target.value)}
                             />
                         </div>
                         <div>
-                            <h6 className='bold'>Blockchain</h6>
+                            <div className='bold'>Blockchain</div>
                             <input type="text" placeholder='XDC' className='createitem_input'/>
                         </div>
                         </Stack>
@@ -110,7 +105,7 @@ function CreateCollection() {
                     <Bounce>
                         <Stack gap={4} >
                             <div className='createitem_select'>
-                                <h6 className='bold'>Category</h6>
+                                <div className='bold'>Category</div>
                                 <Form.Select aria-label="Default select example">
                                     <option>My Space</option>
                                     <option value="1">One</option>
@@ -119,7 +114,7 @@ function CreateCollection() {
                                 </Form.Select>
                             </div>
                             <div className='createitem_select'>
-                            <h6 className='bold'>Royalties</h6>
+                            <div className='bold'>Royalties</div>
                             <Form.Select aria-label="Default select example">
                                 <option>5%</option>
                                 <option value="1">One</option>
@@ -135,7 +130,7 @@ function CreateCollection() {
                     <Col>
                     <Bounce>
                         <div>
-                            <h6 className='bold'>Description</h6>
+                            <div className='bold'>Description</div>
                             <textarea type="textarea" className="createitem_input" placeholder="eg.Limited Outspace series"/>
                         </div>
                     </Bounce>
@@ -144,7 +139,7 @@ function CreateCollection() {
 
                 <Row>
                     <Col xxl={6} xl={6} lg={6} sm={12} xs={12} className='mb-3'>
-                        <h6 className='bold'>Logo Image</h6>
+                        <div className='bold'>Logo Image</div>
                     <Bounce>
                         <div className="p-4 createitem_uploadbox text-center h-100">
                                 <small className='bold'>Upload Files</small><br/>
@@ -158,7 +153,7 @@ function CreateCollection() {
                     </Col>
 
                     <Col xxl={6} xl={6} lg={6} sm={12} xs={12} className='mb-3'>
-                        <h6 className='bold'>Featured Image</h6>
+                        <div className='bold'>Featured Image</div>
                     <Bounce>
                     <div className="p-4 createitem_uploadbox text-center h-100">
                                 <small className='bold'>Upload Files</small><br/>
@@ -174,7 +169,7 @@ function CreateCollection() {
 
                 <Row>
                     <Col xxl={12} xl={12} lg={12} sm={12} xs={12} className='mb-3'>
-                        <h6 className='bold'>Banner Image</h6>
+                        <div className='bold'>Banner Image</div>
                     <Bounce>
                         <div className="p-4 createitem_uploadbox text-center h-100">
                             <small className='bold'>Upload Files</small><br/>

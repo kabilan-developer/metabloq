@@ -23,7 +23,7 @@ const style = {
   };
   
 function PlacebidModal(props) {
-  let { placeModalOpen, setPlaceModalOpen,placeModalClose,playSound,joinSound } = props;
+  let { placeModalOpen, setPlaceModalOpen,placeModalClose } = props;
   const [successModal,setSuccessModal] = useState(false);
 
   const successModalClose = ()=>{

@@ -4,10 +4,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: "LufgaRegular" !important;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 .App {
   max-height: 100%;
   overflow: hidden;
+  font-size: calc(15px + 0.390625vw);
 }
 .bold{
   font-weight: bold;

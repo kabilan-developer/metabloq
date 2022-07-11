@@ -42,9 +42,9 @@ function ChooseUs() {
           <Col xxl={4} xl={4} lg={4} md={4} sm={12} xs={12} className="d-flex align-items-stretch">
             <Bounce>
             <div className="chooseus_cards metablog_cards img-zoom-animation" key={data.id}>
-              <h6 className="font-weight-bold">
+              <div className="font-weight-bold">
                 {data.id}. {data.title}
-              </h6>
+              </div>
               <small className="secondary-text">{data.content}</small>
             </div>
             </Bounce>

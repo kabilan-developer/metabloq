@@ -57,7 +57,7 @@ function EditProfile() {
   return (
     <div className="editprofile_container">
       <Row>
-        <h5>Profile Photo</h5>
+        <div>Profile Photo</div>
         <Col xxl={6} xl={6} lg={6} md={6} sm={12} xs={12} className="mb-3">
           <div className="editprofile_imgupload-box h-100">
             {!uploadedImg ? (
@@ -75,7 +75,7 @@ function EditProfile() {
                     Drag and drop <br />
                     files to upload
                   </h4>
-                  <h5 className="text-center">OR</h5>
+                  <div className="text-center">OR</div>
                   <label class="metablog_primary-filled-square-button">
                     <small>Browse</small>
                     <input

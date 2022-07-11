@@ -35,7 +35,7 @@
 @media (max-width: 576px) {
   .nftdetails_cards-tabs .nav-tabs {
     display: flex;
-    justify-content: start !important;
+    justify-content: flex-start !important;
   }
   .nav-tabs .nav-link {
     padding: 0.5em;

@@ -34,7 +34,7 @@ function WebFilter(props) {
             <BiMicrophone/>
         </div>
         <div className=''>
-            <h6>Type</h6>
+            <div>Type</div>
             <Row  className='nftcollection_filter-menu'>
             <Col  onClick={() => playSound()} className='nftcollection_filter-div m-2'>
                 <font size="2">Allitems</font>
@@ -54,7 +54,7 @@ function WebFilter(props) {
             </Row>
         </div>
         <div className='webfilter_range'>
-            <h6>Price range</h6>
+            <div>Price range</div>
             <div className='slider custom-labels'>
             <Slider
                 min={0}
@@ -66,7 +66,7 @@ function WebFilter(props) {
             </div>
         </div>
         <div className=''>
-            <h6>Creator</h6>
+            <div>Creator</div>
             <div className=''>
                 <Form.Select aria-label="Default select example">
                 <option>Verified only</option>
@@ -97,7 +97,7 @@ function WebFilter(props) {
             <BiMicrophone/>
         </div>
         <div className=''>
-            <h6>Type</h6>
+            <div>Type</div>
             <Row  className='nftcollection_filter-menu'>
             <Col  onClick={() => playSound()} className='nftcollection_filter-div m-2'>
                 <font size="2">Allitems</font>
@@ -123,7 +123,7 @@ function WebFilter(props) {
             </Row>
         </div>
         <div className='webfilter_range'>
-            <h6>Price range</h6>
+            <div>Price range</div>
             <div className='slider custom-labels'>
             <Slider
                 min={0}
@@ -135,7 +135,7 @@ function WebFilter(props) {
             </div>
         </div>
         <div className=''>
-            <h6>Sort By</h6>
+            <div>Sort By</div>
             <Row >
             <Col onClick={() => playSound()} className='nftcollection_filter-div m-2'>
                 <font size="2">Highest First</font>
