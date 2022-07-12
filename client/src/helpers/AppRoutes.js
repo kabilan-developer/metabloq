@@ -37,9 +37,11 @@ function AppRoutes() {
             <Route path="collections" element={<NFTCollectionPage collections="collections"/>}/>
             <Route path="assets/:id" element={<NFTDetailsPage LiveAuctionData={LiveAuctionData}/>}/>
             <Route path="collectors" element={<CollectorsPage/>}/>
+            <Route path="collectors/signin" element={<SignInPage/>}/>
             <Route path="collectors/activity" element={<Activity myprofile="myprofile"/>}/>
             <Route path="collectors/:id" element={<NFTDetailsPage LiveAuctionData={LiveAuctionData}/>}/>
             <Route path="collectors/editprofile" element={<EditProfilePage/>}/>
+            <Route path="collectors/collectionhome" element={<CollectablesHome/>}/>
             <Route path="createcollection" element={<CreateCollectionPage/>}/>
             <Route path="createnft" element={<CreateItemPage/>}/>
             <Route path="signup" element={<SignUpPage/>}/>

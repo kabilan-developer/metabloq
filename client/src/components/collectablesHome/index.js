@@ -180,7 +180,7 @@ function CollectablesHome() {
               <NFTDetailsList collectionhome="collectionhome" />
             </Tab>
             <Tab eventKey="Activity" title="Activity">
-              <Activity />
+              <Activity collectionhome="collectionhome"/>
             </Tab>
             <Tab
               className="ms-auto"

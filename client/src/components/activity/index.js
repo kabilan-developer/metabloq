@@ -5,6 +5,7 @@ import {HiShoppingCart} from 'react-icons/hi';
 import {BsTagFill} from 'react-icons/bs';
 import {FaHandHolding} from 'react-icons/fa';
 import {BsStars} from 'react-icons/bs';
+import Fade from 'react-reveal/Fade';
 
 const avatar1 = require('../../assets/nfts/1.png')
 const avatar2 = require('../../assets/nfts/2.png')
@@ -78,10 +79,11 @@ const days = [
   {id:4,days:"7 Days"},
   {id:5,days:"Today"}
 ]
-function Activity({myprofile}) {
+function Activity({myprofile,collectionhome}) {
   return (
-    <div className="metabloq_container mt-sm-5">
+    <div className = {collectionhome ? "p-0" : "metabloq_container mt-sm-5"}>
       <Stack gap={4}>
+      
         <div className="d-flex justify-content-end ranking_select-input">
           <Stack direction="horizontal" gap={2}>
             <Form.Select aria-label="Default select example" className="ranking_input">
@@ -94,15 +96,19 @@ function Activity({myprofile}) {
               </Form.Select>
               </Stack>
         </div>
+
+        <Fade bottom>
         {
           myprofile ? <h1 className="text-center lufga-bold">My Activity</h1> :
           <h1 className="text-center lufga-bold">Activity</h1>
         }
-          
+        </Fade>
+        <Fade bottom>
         <small className="secondary-text text-center w-100">
           Top NFTs on ARTZ, ranked by volume, Floor prize and others
         </small>
-
+        </Fade>
+        <Fade bottom>
         <div className="ranking_table">
           <Row className="ranking_table-header lufga-bold d-flex justify-content-between align-items-center">
             <Col className="text-center"></Col>
@@ -155,6 +161,7 @@ function Activity({myprofile}) {
             </>
           ))}
         </div>
+        </Fade>
         <div className="d-flex justify-content-center">
             <button className="metablog_primary-filled-square-button py-1 px-5">
                 <span>Show More</span>

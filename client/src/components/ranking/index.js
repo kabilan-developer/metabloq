@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Form, Image, Row, Stack } from "react-bootstrap";
 import './Styles.css';
+import Fade from 'react-reveal/Fade';
 
 const avatar1 = require('../../assets/nfts/1.png')
 const avatar2 = require('../../assets/nfts/2.png')
@@ -55,10 +56,13 @@ function Ranking() {
   return (
     <div className="metabloq_container mt-sm-5">
       <Stack gap={4}>
+        <Fade bottom>
         <h1 className="lufga-bold text-center">Top Collections</h1>
         <small className="secondary-text text-center w-100">
           Top NFTs on ARTZ, ranked by volume, Floor prize and others
         </small>
+        </Fade>
+        
         <div className="d-flex justify-content-center ranking_select-input">
           <Stack gap={3} direction="horizontal">
             <Form.Select
@@ -82,7 +86,8 @@ function Ranking() {
             </Form.Select> */}
           </Stack>
         </div>
-
+        
+        <Fade bottom>
         <div className="ranking_table-wrapper">
           <div className="ranking_table">
           <Row className="ranking_table-header lufga-bold d-flex justify-content-between align-items-center">
@@ -125,6 +130,7 @@ function Ranking() {
           ))}
           </div>
         </div>
+        </Fade>
         <div className="d-flex justify-content-center">
             <button className="metablog_primary-filled-square-button py-1 px-5">
                 <span>Show More</span>

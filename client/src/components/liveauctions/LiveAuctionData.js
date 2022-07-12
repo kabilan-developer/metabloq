@@ -138,7 +138,7 @@ export const LiveAuctionData = [
       name:"Diamond Stone",
       price:9.8,
       chain:"BLOQS",
-      button_name:"Place a Bid",
+      button_name:"Place Bid",
       nftdetails_button:"Make Offer",
       profile_button:"Put On Sale",
       time_icon:time_icon,

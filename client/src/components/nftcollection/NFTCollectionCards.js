@@ -81,7 +81,7 @@ function NFTCollectionCards() {
                     )}
 
                     <div
-                      className="font-weight-bold"
+                      className="font-weight-bold lufga"
                       style={{ color: "#1C83E5" }}
                     >
                       {data.price} {data.chain}

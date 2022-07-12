@@ -43,7 +43,7 @@ function NFTCollectionSection(props) {
   return (
     <div className="metabloq_container">
       <Stack gap={4}>
-        <Slide top>
+        <Slide>
           {width < 600 ? (
             <>
               <MobileFilterBtn collections={collections} />
@@ -68,7 +68,7 @@ function NFTCollectionSection(props) {
                     {collections ? (
                       <ArtCollection art="Art" />
                     ) : (
-                      <HighestBidSort />
+                      <NFTCollectionCards />
                     )}
                   </Tab>
                   <Tab
@@ -79,7 +79,7 @@ function NFTCollectionSection(props) {
                     {collections ? (
                       <BuildingCollection building="Buildings" />
                     ) : (
-                      <CollectionSort />
+                      <NFTCollectionCards />
                     )}
                   </Tab>
                   <Tab
@@ -90,7 +90,7 @@ function NFTCollectionSection(props) {
                     {collections ? (
                       <VirtualCollection virtual="Virtual Real Estate" />
                     ) : (
-                      <AuthorSort />
+                      <NFTCollectionCards />
                     )}
                   </Tab>
                   <Tab
@@ -112,7 +112,7 @@ function NFTCollectionSection(props) {
                     {collections ? (
                       <WearablesCollection wear="Wearables" />
                     ) : (
-                      <CollectionSort />
+                      <NFTCollectionCards />
                     )}
                   </Tab>
                   <Tab
@@ -123,7 +123,7 @@ function NFTCollectionSection(props) {
                     {collections ? (
                       <MiscellaneousCollection miscellaneous="Miscellaneous" />
                     ) : (
-                      <HighestBidSort />
+                      <NFTCollectionCards />
                     )}
                   </Tab>
                   {width > 600 ? (
@@ -191,7 +191,7 @@ function NFTCollectionSection(props) {
                   {collections ? (
                     <ArtCollection art="Art" />
                   ) : (
-                    <HighestBidSort />
+                    <NFTCollectionCards />
                   )}
                 </Tab>
                 <Tab
@@ -202,7 +202,7 @@ function NFTCollectionSection(props) {
                   {collections ? (
                     <BuildingCollection building="Buildings" />
                   ) : (
-                    <CollectionSort />
+                    <NFTCollectionCards />
                   )}
                 </Tab>
                 <Tab
@@ -213,7 +213,7 @@ function NFTCollectionSection(props) {
                   {collections ? (
                     <VirtualCollection virtual="Virtual Real Estate" />
                   ) : (
-                    <AuthorSort />
+                    <NFTCollectionCards />
                   )}
                 </Tab>
                 <Tab
@@ -235,7 +235,7 @@ function NFTCollectionSection(props) {
                   {collections ? (
                     <WearablesCollection wear="Wearables" />
                   ) : (
-                    <CollectionSort />
+                    <NFTCollectionCards />
                   )}
                 </Tab>
                 <Tab
@@ -246,7 +246,7 @@ function NFTCollectionSection(props) {
                   {collections ? (
                     <MiscellaneousCollection miscellaneous="Miscellaneous" />
                   ) : (
-                    <HighestBidSort />
+                    <NFTCollectionCards />
                   )}
                 </Tab>
                 <Tab
