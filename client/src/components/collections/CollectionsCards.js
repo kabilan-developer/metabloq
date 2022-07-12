@@ -3,15 +3,17 @@ import { Row, Col, Stack, Image } from "react-bootstrap";
 import { CollectionsData } from './CollectionsData';
 import {AiTwotoneHeart} from 'react-icons/ai'
 import Fade from 'react-reveal/Fade';
+import { useNavigate } from 'react-router-dom';
 
 function CollectionsCards() {
+    const navigate = useNavigate()
   return (
     <Row>
         {
             CollectionsData.slice(0,3).map((data)=>(
                 <Col xxl={4} xl={4} lg={4} md={4} sm={12} xs={12} className="mb-3">
                     <Fade bottom>
-                    <div className='collections_cards metablog_cards' key={data.id}>
+                    <div onClick={()=> navigate("collectionhome")} className='collections_cards metablog_cards' key={data.id}>
                         <Stack gap={2}>
                         <Row className='collections_cards-grid'>
                             <Col style={{padding:5}}>

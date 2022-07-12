@@ -8,14 +8,15 @@ import { Pagination } from "swiper";
 import useWindowDimensions from '../../helpers/useWindowDimensions';
 import Bounce from 'react-reveal/Bounce';
 import useSound from 'use-sound';
-import join from '../../assets/audio/join.mp3';
+import buttonSound from '../../assets/audio/button.wav';
+
 import PlacebidModal from "../placebidModal";
 import {useNavigate} from 'react-router-dom'
 
 
 function LiveAuctionCards() {
   const {width} = useWindowDimensions();
-  const [playSound] = useSound(join);
+  const [playSound] = useSound(buttonSound);
   const navigate = useNavigate();
 
   const [placeModalOpen, setPlaceModalOpen] = useState(false);

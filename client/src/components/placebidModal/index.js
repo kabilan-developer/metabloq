@@ -4,7 +4,7 @@ import Modal from "@mui/material/Modal";
 import "./Styles.css";
 import { Image, Stack } from "react-bootstrap";
 import useSound from 'use-sound';
-import connectWallet from '../../assets/audio/connectWallet.mp3';
+import buttonSound from "../../assets/audio/button.wav";
 
 const smallstar = require('../../assets/smallstar.png')
 const bigstar = require('../../assets/bigstar.png')
@@ -33,9 +33,9 @@ function PlacebidModal(props) {
   const placebidClick = ()=>{
     setPlaceModalOpen(false);
     setSuccessModal(true);
-    success();
+    playSound();
   }
-  const [success] = useSound(connectWallet)
+  const [playSound] = useSound(buttonSound)
   return (
     <>
       <Modal

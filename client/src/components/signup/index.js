@@ -44,14 +44,14 @@ function SignUp() {
               onChange={(e) => setusername(e.target.value)}
               type="text"
               placeholder="User Name"
-              className="editprofile_input"
+              className="login_input"
             />
             <input
               value={email}
               onChange={(e) => setemail(e.target.value)}
               type="text"
               placeholder="Email Address"
-              className="editprofile_input"
+              className="login_input"
             />
             <div className="signup_password-input">
               <input
@@ -59,7 +59,7 @@ function SignUp() {
                 value={password}
                 onChange={(e) => setpassword(e.target.value)}
                 placeholder="Password"
-                className="editprofile_input"
+                className="login_input"
               />
               <span onClick={viewIconClick}>
                 {viewPwd ? (

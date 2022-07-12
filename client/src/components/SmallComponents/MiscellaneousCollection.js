@@ -95,26 +95,9 @@ function MiscellaneousCollection(props) {
                       <span className="mx-1 poppins">420</span>
                     </div>
                   </div>
-                  <div className="d-flex justify-content-start align-items-center h-100 mb-sm-3 lufga">
-                  <Stack gap={width > 600 ? "3" : "2"} direction="horizontal">
-                    <div className="d-flex flex-column ">
-                      <small className="fw-bold">9.4k</small>
-                      <small>items</small>
-                    </div>
-                    <div className="d-flex flex-column ">
-                      <small className="fw-bold">5.7k</small>
-                      <small>owners</small>
-                    </div>
-
-                    <div className="d-flex flex-column ">
-                      <small className="fw-bold">8.9k</small>
-                      <small>total volume</small>
-                    </div>
-                    <div className="d-flex flex-column">
+                  <div className="d-flex justify-content-between poppins">
+                      <small>Floor price</small>
                       <small className="fw-bold">1.85</small>
-                      <small>floor price</small>
-                    </div>
-                  </Stack>
                 </div>
                 </Stack>
               </div>
@@ -195,26 +178,9 @@ function MiscellaneousCollection(props) {
                       <span className="mx-1 poppins">740</span>
                     </div>
                   </div>
-                  <div className="d-flex justify-content-start align-items-center h-100 mb-sm-3 lufga">
-                  <Stack gap={width > 600 ? "3" : "2"} direction="horizontal">
-                    <div className="d-flex flex-column ">
-                      <small className="fw-bold">9.4k</small>
-                      <small>items</small>
-                    </div>
-                    <div className="d-flex flex-column ">
-                      <small className="fw-bold">5.7k</small>
-                      <small>owners</small>
-                    </div>
-
-                    <div className="d-flex flex-column ">
-                      <small className="fw-bold">8.9k</small>
-                      <small>total volume</small>
-                    </div>
-                    <div className="d-flex flex-column">
+                  <div className="d-flex justify-content-between poppins">
+                      <small>Floor price</small>
                       <small className="fw-bold">1.85</small>
-                      <small>floor price</small>
-                    </div>
-                  </Stack>
                 </div>
                 </Stack>
               </div>
@@ -295,26 +261,9 @@ function MiscellaneousCollection(props) {
                       <span className="mx-1 poppins">220</span>
                     </div>
                   </div>
-                  <div className="d-flex justify-content-start align-items-center h-100 mb-sm-3 lufga">
-                  <Stack gap={width > 600 ? "3" : "2"} direction="horizontal">
-                    <div className="d-flex flex-column ">
-                      <small className="fw-bold">9.4k</small>
-                      <small>items</small>
-                    </div>
-                    <div className="d-flex flex-column ">
-                      <small className="fw-bold">5.7k</small>
-                      <small>owners</small>
-                    </div>
-
-                    <div className="d-flex flex-column ">
-                      <small className="fw-bold">8.9k</small>
-                      <small>total volume</small>
-                    </div>
-                    <div className="d-flex flex-column">
+                  <div className="d-flex justify-content-between poppins">
+                      <small>Floor price</small>
                       <small className="fw-bold">1.85</small>
-                      <small>floor price</small>
-                    </div>
-                  </Stack>
                 </div>
                 </Stack>
               </div>

@@ -28,6 +28,7 @@ function AppRoutes() {
         <Routes>
             <Route path="/" element={<HomePage/>}/>
             <Route path="/:id" element={<NFTDetailsPage LiveAuctionData={LiveAuctionData}/>}/>
+            <Route path="/collectionhome" element={<CollectablesHome/>}/>
             <Route path="liveauction" element={<LiveAuctionPage/>}/>
             <Route path="liveauction/:id" element={<NFTDetailsPage LiveAuctionData={LiveAuctionData}/>}/>
             <Route path="assets" element={<NFTCollectionPage/>}/>

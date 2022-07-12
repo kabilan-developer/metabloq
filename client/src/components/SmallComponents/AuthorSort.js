@@ -4,7 +4,7 @@ import useWindowDimensions from '../../helpers/useWindowDimensions';
 import Fade from 'react-reveal/Fade';
 import { LiveAuctionData } from '../../components/liveauctions/LiveAuctionData';
 import useSound from 'use-sound';
-import join from '../../assets/audio/join.mp3';
+import buttonSound from '../../assets/audio/button.wav';
 import PlacebidModal from '../placebidModal';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,10 +13,10 @@ const AuthorSort = (props)=>{
     const navigate = useNavigate()
     const AuthorSort = [...LiveAuctionData].sort((a, b) => a.avatar_name > b.avatar_name ? 1 : -1);
     const {width} = useWindowDimensions();
-    const [joinSound] = useSound(join)
+    const [playSound] = useSound(buttonSound)
 
     const placebidBtnClick = ()=>{
-        joinSound()
+        playSound()
         setPlaceModalOpen(true);
     }
     return (
@@ -92,7 +92,7 @@ const AuthorSort = (props)=>{
             }
         </Row>
         </Stack>
-        <PlacebidModal {...props} joinSound={joinSound}/>
+        <PlacebidModal {...props} playSound={playSound}/>
         </>
     )
 }

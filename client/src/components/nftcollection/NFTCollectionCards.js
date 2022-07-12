@@ -4,13 +4,13 @@ import { Row, Col, Stack, Image } from "react-bootstrap";
 import useWindowDimensions from "../../helpers/useWindowDimensions";
 import Fade from "react-reveal/Fade";
 import useSound from "use-sound";
-import join from "../../assets/audio/join.mp3";
+import buttonSound from "../../assets/audio/button.wav";
 import { useNavigate } from "react-router-dom";
 import PlacebidModal from "../placebidModal";
 
 function NFTCollectionCards() {
   const { width } = useWindowDimensions();
-  const [playSound] = useSound(join);
+  const [playSound] = useSound(buttonSound);
   const navigate = useNavigate();
 
   const [placeModalOpen, setPlaceModalOpen] = useState(false);

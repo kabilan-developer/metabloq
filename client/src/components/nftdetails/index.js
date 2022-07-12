@@ -7,7 +7,6 @@ import './Styles.css'
 import Fade from 'react-reveal/Fade';
 import useSound from 'use-sound';
 import buttonSound from '../../assets/audio/button.wav';
-import join from '../../assets/audio/join.mp3';
 import {useParams} from 'react-router-dom';
 import PlacebidModal from '../placebidModal'
 import BuynowModal from '../buynowModal'
@@ -22,7 +21,6 @@ function NFTDetails(props) {
     const { id } = useParams();
     let {LiveAuctionData} = props;
     const [playSound] = useSound(buttonSound)
-    const [joinSound] = useSound(join)
 
 const [placeModalOpen, setPlaceModalOpen] = useState(false);
 const [buyModalOpen, setBuyModalOpen] = useState(false);
@@ -36,11 +34,11 @@ const [buyModalOpen, setBuyModalOpen] = useState(false);
 
   const placebidClick = ()=>{
     setPlaceModalOpen(true);
-    joinSound();
+    playSound();
   }
   const buyClick = ()=>{
     setBuyModalOpen(true);
-    joinSound();
+    playSound();
   }
   return (
     <div className='metabloq_container nftdetails_container'>
@@ -116,21 +114,21 @@ const [buyModalOpen, setBuyModalOpen] = useState(false);
                                 <div className='d-flex'>
                                     <Image src={avatar1} height={45} width={45} />
                                     <div className='d-flex flex-column mx-3'>
-                                        <span className='bold'>Bid 0.093 <Image src={bloqs} fluid  height={20} width={20}/> &nbsp;BLOQS</span>
+                                        <span className='bold'>Bid  <Image src={bloqs} fluid  height={20} width={20}/> &nbsp;0.093 BLOQS</span>
                                         <font size="2">by Harpreet at 3/10/2022, 10:15 AM</font>
                                     </div>
                                 </div>
                                 <div className='d-flex'>
                                     <Image src={avatar2} height={45} width={45} />
                                     <div className='d-flex flex-column mx-3'>
-                                        <span className='bold'>Bid 0.093 <Image src={bloqs} fluid  height={20} width={20}/> &nbsp;BLOQS</span>
+                                        <span className='bold'>Bid <Image src={bloqs} fluid  height={20} width={20}/> &nbsp;0.093 BLOQS</span>
                                         <font size="2">by Harpreet at 3/10/2022, 10:15 AM</font>
                                     </div>
                                 </div>
                                 <div className='d-flex'>
                                     <Image src={avatar3} height={45} width={45} />
                                     <div className='d-flex flex-column mx-3'>
-                                        <span className='bold'>Bid 0.093 <Image src={bloqs} fluid  height={20} width={20}/> &nbsp;BLOQS</span>
+                                        <span className='bold'>Bid <Image src={bloqs} fluid  height={20} width={20}/> &nbsp;0.093 BLOQS</span>
                                         <font size="2">by Harpreet at 3/10/2022, 10:15 AM</font>
                                     </div>
                                 </div>

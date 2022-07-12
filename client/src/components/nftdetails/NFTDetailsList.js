@@ -6,7 +6,6 @@ import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
 import useSound from "use-sound";
 import buttonSound from "../../assets/audio/button.wav";
-import join from "../../assets/audio/join.mp3";
 import { useNavigate } from "react-router-dom";
 import { LiveAuctionData } from "../liveauctions/LiveAuctionData";
 import Modalbox from "../modalbox/Modalbox";
@@ -30,7 +29,7 @@ const NFTDetailsList = (props) => {
   };
 
   const onPlacebidClick = () => {
-    joinSound();
+    playSound()
     setPlaceModalOpen(true);
   };
 
@@ -49,7 +48,6 @@ const NFTDetailsList = (props) => {
     playSound();
   };
   const [playSound] = useSound(buttonSound);
-  const [joinSound] = useSound(join);
 
   //for puton sale modal
   const [show, setShow] = useState(false);
@@ -118,7 +116,7 @@ const NFTDetailsList = (props) => {
         
                         <MyProfileNfts
                           setNftsImg={setNftsImg}
-                          joinSound={joinSound}
+                          playSound={playSound}
                           data={data}
                           setShow={setShow}
                           putonsale="putonsale"
@@ -127,7 +125,7 @@ const NFTDetailsList = (props) => {
                        myprofile && data.profile_button === "On Sale" ?
                         <MyProfileNfts
                           setNftsImg={setNftsImg}
-                          joinSound={joinSound}
+                          playSound={playSound}
                           data={data}
                           setShow={setShow}
                         /> : null
@@ -136,7 +134,7 @@ const NFTDetailsList = (props) => {
                     {nftdetailspage ? (
                       <NftDetailsButtons
                         setNftsImg={setNftsImg}
-                        joinSound={joinSound}
+                        playSound={playSound}
                         data={data}
                         setShow={setShow}
                       />

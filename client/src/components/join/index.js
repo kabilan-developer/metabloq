@@ -4,13 +4,12 @@ import { Row, Image, Col, Stack } from "react-bootstrap";
 import Fade from 'react-reveal/Fade';
 import useSound from 'use-sound';
 import buttonSound from '../../assets/audio/button.wav';
-import join from '../../assets/audio/join.mp3';
 
 const img = require("../../assets/join/metablog_circle.svg");
 
 function Join() {
   const [playSound] = useSound(buttonSound)
-  const [joinSound] = useSound(join)
+
   return (
     <Fade right>
     <div className="join_container">
@@ -26,7 +25,7 @@ function Join() {
                 <small className="secondary-text">Digital Revolution is here, explore, & collect digital art NFT</small>
             </div>
             <div className="">
-                <button onClick={() => joinSound()} className="metablog_primary-filled-button mx-2"><span>Join Now</span></button>
+                <button onClick={() => playSound()} className="metablog_primary-filled-button mx-2"><span>Join Now</span></button>
                 <button onClick={() => playSound()} className="metablog_gradient-borderless-button mx-2"><span>Learn More</span></button>
             </div>
             </Stack>

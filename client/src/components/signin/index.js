@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BiShow, BiHide } from "react-icons/bi";
 
 import {  Stack } from "react-bootstrap";
+import { Navigate, useNavigate } from "react-router-dom";
 
 
 function SignIn() {
@@ -9,6 +10,7 @@ function SignIn() {
   const [password, setpassword] = useState("");
 
   const [viewPwd, setViewPwd] = useState(true);
+  const navigate = useNavigate()
 
   const viewIconClick = () => {
     if (viewPwd === false) {
@@ -26,7 +28,10 @@ function SignIn() {
     };
     setemail("");
     setpassword("");
+    localStorage.setItem('@user',email)
     console.log("data", data);
+    localStorage.setItem('@loggedin',"allow")
+    navigate("/");
   };
   return (
     <div className="signup_container">
@@ -42,7 +47,8 @@ function SignIn() {
              onChange={(e)=> setemail(e.target.value)}
               type="text"
               placeholder="Email Address"
-              className="editprofile_input"
+              className="login_input" 
+              required
             />
                <div className="signup_password-input">
               <input
@@ -50,7 +56,8 @@ function SignIn() {
                 value={password}
                 onChange={(e) => setpassword(e.target.value)}
                 placeholder="Password"
-                className="editprofile_input"
+                className="login_input"
+                required
               />
               <span onClick={viewIconClick}>
                 {viewPwd ? (

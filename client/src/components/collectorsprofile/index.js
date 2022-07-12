@@ -57,7 +57,7 @@ function CollectorsProfile() {
                 <div className='mx-3 d-flex align-items-center'>
                     <div>
                     <Stack gap={1}>
-                        <h2>Tony Stark <font size="2" className='secondary-text'>(@hitstony)</font></h2> 
+                        <h2>{localStorage.getItem('@user')}<font size="2" className='secondary-text'>(@hitstony)</font></h2> 
                         <span>www.iamironman.com</span>
                         {
                             wallet.connected && 

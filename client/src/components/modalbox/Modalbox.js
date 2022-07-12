@@ -4,8 +4,8 @@ import { Grid, Button, Modal, Typography, Switch, FormControlLabel } from '@mui/
 import { Styles } from './styles'
 import './modal.css';
 
-import Price from '../../assets/modal/price.svg'
-import Auction from '../../assets/modal/auction.svg'
+import Price from '../../assets/modal/fixed.png'
+import Auction from '../../assets/modal/timed_auction.png'
 
 
 function Modalbox(props) {
@@ -49,15 +49,15 @@ function Modalbox(props) {
                             <Button onClick={() => setShow(false)} className={classes.closebtnmodal} >x</Button>
                         </Grid>
                         <Grid lg={12} md={12} sm={12} xs={12} direction='row' container justifyContent='center' alignContent='center' className={classes.afterheadergrid}>
-                            <Grid lg={3} md={3} sm={12} xs={12} direction='column' container justifyContent='center' alignContent='center'>
+                            <Grid lg={3} md={3} sm={12} xs={12} direction='column' container justifyContent='space-evenly' alignContent='center'>
                                 <Grid direction='column' container justifyContent='center' alignContent='center' textAlign='center'>
                                     <Button className={classes.buttonmodalbox} onClick={() => { setpricem(true)
-                                         setShow(false) }}><img src={Price} alt='' /></Button>
+                                         setShow(false) }}><img src={Price} alt='' height={70} width={70}/></Button>
                                     <Typography paragraph className={classes.parainnermodal}>Fixed price</Typography>
                                 </Grid>
                                 <Grid direction='column' container justifyContent='center' alignContent='center' textAlign='center'>
                                     <Button className={classes.buttonmodalbox} onClick={() => { setauction(true)
-                                         setShow(false) }}><img src={Auction} alt='' /></Button>
+                                         setShow(false) }}><img src={Auction} alt='' height={70} width={70}/></Button>
                                     <Typography paragraph className={classes.parainnermodal}>Timed Auction</Typography>
                                 </Grid>
                             </Grid>

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { LiveAuctionData } from '../../components/liveauctions/LiveAuctionData';
 import useSound from 'use-sound';
 import buttonSound from '../../assets/audio/button.wav';
-import join from '../../assets/audio/join.mp3';
 import useWindowDimensions from '../../helpers/useWindowDimensions';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
@@ -36,10 +35,9 @@ function AllLiveAuction(props) {
         playSound()
       };
       const [playSound] = useSound(buttonSound)
-      const [joinSound] = useSound(join)
 
       const placebidBtnClick =()=>{
-          joinSound()
+        playSound()
           setPlaceModalOpen(true);
       }
   return (
@@ -125,7 +123,7 @@ function AllLiveAuction(props) {
         </Stack>
         
         </div>
-        <PlacebidModal {...props} joinSound={joinSound}/>
+        <PlacebidModal {...props} playSound={playSound}/>
         </>
   )
 }

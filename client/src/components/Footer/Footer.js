@@ -7,11 +7,11 @@ import { ImTwitter } from "react-icons/im";
 import { SiDiscord } from "react-icons/si";
 import { BsInstagram } from "react-icons/bs";
 import useSound from "use-sound";
-import subscribeSound from "../../assets/audio/subscribeSound.mp3";
+import buttonSound from "../../assets/audio/button.wav";
 const logo = require("../../assets/metablog_logo.png");
 
 function Footer() {
-  const [playSound] = useSound(subscribeSound);
+  const [playSound] = useSound(buttonSound);
 
 
   return (

@@ -4,8 +4,7 @@ import useWindowDimensions from '../../helpers/useWindowDimensions';
 import Fade from 'react-reveal/Fade';
 import { LiveAuctionData } from '../../components/liveauctions/LiveAuctionData';
 import useSound from 'use-sound';
-
-import join from '../../assets/audio/join.mp3';
+import buttonSound from '../../assets/audio/button.wav';
 import PlacebidModal from '../placebidModal';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,9 +14,9 @@ const HighestBidSort = (props)=>{
     const highestBid = [...LiveAuctionData].sort((a, b) => b.price - a.price);
 
     const {width} = useWindowDimensions();
-    const [joinSound] = useSound(join);
+    const [playSound] = useSound(buttonSound);
     const placebidBtnClick = ()=>{
-        joinSound()
+        playSound()
         setPlaceModalOpen(true)
     }
     return (
@@ -93,7 +92,7 @@ const HighestBidSort = (props)=>{
             }
         </Row>
         </Stack>
-        <PlacebidModal {...props} joinSound={joinSound}/>
+        <PlacebidModal {...props} playSound={playSound}/>
         </div>
     )
 }

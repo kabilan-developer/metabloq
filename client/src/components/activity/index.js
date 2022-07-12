@@ -125,16 +125,15 @@ function Activity({myprofile}) {
                 </Col>
                 <Col  className="text-left d-flex">
                   <Stack gap={2} direction="horizontal">
-                    <Image fluid src={data.item_avatar} height={35} width={35} className="rounded_img"/>
+                    <Image fluid src={data.item_avatar} height={45} width={45} className="rounded_img"/>
                     <div className="d-flex flex-column">
-                        <small  >{data.item_name}</small>
+                        <small >{data.item_name.slice(0, 15) + (data.item_name.length > 15 ? ".." : "")}</small>
                         <small  className="lufga-bold">{data.item_email}</small>
                     </div>
                   </Stack>
                 </Col>
-                <Col className="text-center">
-                    <div className="d-flex flex-column">
-                        
+                <Col className="text-right ">
+                    <div className="d-flex flex-column mr-3">
                         <small className="lufga-bold"> <Image src={bloqs} fluid  height={20} width={20}/> &nbsp;{data.price}</small>
                         <font size="1">{data.dollar}</font>
                     </div>

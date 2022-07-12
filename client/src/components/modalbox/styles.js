@@ -1,4 +1,5 @@
 import { makeStyles,createStyles } from '@mui/styles'
+import { padding } from '@mui/system'
 export const Styles = makeStyles((theme) =>createStyles ({
     modalmainwrapper: {
         background: '#fff !important',
@@ -23,7 +24,8 @@ export const Styles = makeStyles((theme) =>createStyles ({
          },
     },
     buttonmodalbox:{
-        borderRadius: '100px !important'
+        borderRadius: '100px !important',
+        padding:'5em'
     },
     headergrid:{
         borderBottom: '1px solid rgba(122,122,122,0.15) !important'

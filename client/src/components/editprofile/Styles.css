@@ -23,6 +23,16 @@
   box-shadow: none !important;
 
 }
+.login_input {
+  width: 100%;
+  background-color: white;
+  border-radius: 0.3em;
+  outline: none !important;
+  border: none !important;
+  padding: 0.3em 0.5em;
+  box-shadow: none !important;
+
+}
 
 .form-select {
   display: block;

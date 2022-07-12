@@ -4,8 +4,6 @@ import { CollectionsData } from "../../components/collections/CollectionsData";
 import { AiTwotoneHeart } from "react-icons/ai";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
-import useSound from "use-sound";
-import buttonSound from "../../assets/audio/button.wav";
 import "./Styles.css";
 import { useNavigate } from "react-router-dom";
 

@@ -25,8 +25,8 @@ function CollectablesHome() {
     setRangeSlider(value);
   };
   const horizontalLabels = {
-    0: "0.01 BLOQS",
-    100: "100 BLOQS",
+    0: "0.01BLOQS",
+    100: "100BLOQS",
   };
   return (
     <div className="metabloq_container">

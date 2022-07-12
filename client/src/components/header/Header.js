@@ -11,8 +11,9 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import ConenctWallet from "../connectwallet/index.js";
 import useSound from "use-sound";
 import buttonSound from "../../assets/audio/button.wav";
-import connectWallet from "../../assets/audio/connectWallet.mp3";
 import { artAction, buildingAction, metapetsAction, miscellaneousAction, virtualrealestateAction, wearablesAction } from "../../redux/TabAction";
+import { FaUserCircle } from "react-icons/fa";
+import { AiOutlineLogout } from "react-icons/ai";
 
 const metablog_logo = require("../../assets/metablog_logo.png");
 
@@ -30,7 +31,7 @@ const Header = () => {
     console.log("connect");
     setExpanded(false);
     setOpenWallet(true);
-    walletConnectSound();
+    playSound()
     // dispatch(connectWallet());
   };
 
@@ -42,10 +43,9 @@ const Header = () => {
     web3Modal.clearCachedProvider();
     dispatch(connectFailed(errorDiv()));
     setExpanded(false);
-    walletConnectSound();
+    playSound()
   };
   const [playSound] = useSound(buttonSound);
-  const [walletConnectSound] = useSound(connectWallet);
   return (
     <>
       <Navbar
@@ -262,30 +262,53 @@ const Header = () => {
 
               {width < 576 ? (
                 <div className="d-flex justify-content-end">
-                  <button
+                  {
+                    !localStorage.getItem('@loggedin') ?
+                    <button
                     onClick={() => {
-                      navigate("collectors");
+                      navigate("signin");
                       setExpanded(false);
+                      localStorage.setItem('@loggedin',"logged")
                       playSound();
                     }}
                     style={{ width: "40%" }}
                     className="metablog_primary-button"
                   >
                     <span>Log in</span>
-                  </button>
+                  </button> : 
+                <div className="d-flex ">
+                <FaUserCircle/>
+               <AiOutlineLogout/>
+              </div>
+                  }
+                  
                 </div>
               ) : (
-                <button
-                  onClick={() => {
-                    navigate("collectors");
-                    setExpanded(false);
-                    playSound();
-                  }}
-                  className="metablog_primary-button mx-2"
-                >
-                  {" "}
-                  <span>Log in</span>
-                </button>
+                <div >
+                  {
+                     !localStorage.getItem('@loggedin') ?
+                     <button
+                     onClick={() => {
+                       navigate("signin");
+                       setExpanded(false);
+                       playSound();
+                     }}
+                     className="metablog_primary-button mx-2"
+                   >
+                     {" "}
+                     <span>Log in</span>
+                   </button> : 
+                    <div className="d-flex ">
+                      <FaUserCircle color="#0295FA" size={40} onClick={()=> navigate("collectors")}/>
+                     <AiOutlineLogout color="#0295FA" size={40} onClick={()=>{
+                          localStorage.removeItem('@loggedin')
+                          navigate("signin")
+                     }} />
+                    </div>
+
+                  }
+                 
+                </div>
               )}
             </Nav>
           </Navbar.Collapse>

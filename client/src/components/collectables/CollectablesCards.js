@@ -3,14 +3,16 @@ import { Row, Col, Stack, Image } from "react-bootstrap";
 import { AiTwotoneHeart } from "react-icons/ai";
 import { CollectablesData } from "./CollectablesData";
 import Fade from 'react-reveal/Fade';
+import { useNavigate } from "react-router-dom";
 
 function CollectablesCards() {
+  const navigate = useNavigate()
   return (
     <Row>
       {CollectablesData.map((data) => (
         <Col xxl={4} xl={4} lg={4} md={4} sm={12} xs={12} className="mb-3">
           <Fade bottom>
-          <div className="collectables_cards metablog_cards" key={data.id}>
+          <div onClick={()=> navigate("collectionhome")} className="collectables_cards metablog_cards" key={data.id}>
             <Stack gap={2}>
               <div className="collectables_cards-imgsection">
                 <Image fluid src={data.image} alt="collectables" className="metabloq_img img-zoom-animation"/>
