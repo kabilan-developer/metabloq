@@ -1,7 +1,8 @@
 import React,{useEffect, useState} from 'react'
 import './Styles.css'
 import {Col, Image, Row, Stack} from 'react-bootstrap';
-import {AiTwotoneCopy} from 'react-icons/ai';
+import {AiOutlineLogout, AiTwotoneCopy} from 'react-icons/ai';
+import {TbLogout} from 'react-icons/tb'
 import {FaFacebookF} from 'react-icons/fa';
 import {BsTwitter,BsInstagram} from 'react-icons/bs';
 import {FaTelegramPlane} from 'react-icons/fa';
@@ -50,7 +51,7 @@ function CollectorsProfile() {
             <Image src={coverpic} fluid alt="collector profile" className='metabloq_img' style={{borderRadius:'1em 1em 0 0'}}/>
         </div>
         <Row className='h-75 d-flex collectors_profile-imgdiv'>
-            <Col xxl={8} xl={8} lg={8} md={8} sm={12} xs={12} className='d-flex mb-3'>
+            <Col xxl={7} xl={7} lg={7} md={7} sm={12} xs={12} className='d-flex mb-3'>
                 <div className=''>
                     <Image src={profilepic} fluid alt="profile" style={{borderRadius:'1em'}} height={200} width={200}/>
                 </div>
@@ -73,7 +74,7 @@ function CollectorsProfile() {
                     </div>
                 </div>     
             </Col>
-            <Col xxl={4} xl={4} lg={4} md={4} sm={12} xs={12} className=''>
+            <Col xxl={5} xl={5} lg={5} md={5} sm={12} xs={12} className=''>
                 <div className='h-100 d-flex flex-column justify-content-around align-items-center'>
                     <div className='collectors-social-icons-div d-flex justify-sm-content-end align-items-start'>
                         <span className='collectors-social-icons'><BsInstagram color="white" /></span>
@@ -89,6 +90,13 @@ function CollectorsProfile() {
                         <button className='metablog_primary-button' onClick={activityClick}>
                             <span>My Activity</span>
                         </button>
+                        <button className='metablog_primary-filled-button' onClick={()=>{
+                          localStorage.removeItem('@loggedin')
+                          navigate("signin")
+                        }}>
+                            <span><TbLogout size={20} /></span>
+                        </button>
+                        {/* <AiOutlineLogout color="#0295FA" size={40}  /> */}
                         </Stack>
                     </div>
                 </div>

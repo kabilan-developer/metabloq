@@ -11172,10 +11172,10 @@
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
 
-"react-wavify@^1.5.7":
-  "integrity" "sha512-sTVZffh4gus5nVhbKGi0InKFLliA4NHxj0ZmgeHbUUKaOxB8HMY+GS7pS7JoUFhyNGdXIU5n6o5br7bAfO74Bw=="
-  "resolved" "https://registry.npmjs.org/react-wavify/-/react-wavify-1.5.7.tgz"
-  "version" "1.5.7"
+"react-wavify@^1.6.1":
+  "integrity" "sha512-YZigv6XPazRheK9nz2YDK5q10vCKQy/SPkuGTmSUh8P1HP+3R5cxWzjO8WyxrglFKH+im4lJxbzW9+t1pi6IJQ=="
+  "resolved" "https://registry.npmjs.org/react-wavify/-/react-wavify-1.6.1.tgz"
+  "version" "1.6.1"
   dependencies:
     "prop-types" "^15.8.1"
 

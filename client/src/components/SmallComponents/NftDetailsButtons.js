@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MakeOfferModal from "../makeoffermodal";
 
 function NftDetailsButtons(props) {
-    let {joinSound,setNftsImg,data} = props;
+    let {playSound,setNftsImg,data} = props;
   const [makeModalOpen, setMakeModalOpen] = useState(false);
 
   const makeModalClose = () => {
@@ -15,7 +15,7 @@ function NftDetailsButtons(props) {
           <button
             onClick={() => {
               setMakeModalOpen(true);
-              joinSound();
+              playSound();
               setNftsImg(data.avatar);
             }}
             className="metablog_gradient-button w-100"

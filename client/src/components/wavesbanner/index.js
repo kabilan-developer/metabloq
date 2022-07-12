@@ -18,6 +18,7 @@ function WavesBanner(props) {
               <div class="waveWrapperInner bgMiddle">
                 <div class="wave waveMiddle" style={{backgroundImage: `url(${wave1})`,backgroundSize:'50% 100%',padding:'5% 0'}}></div>
               </div>
+              
               <div class="waveWrapperInner bgBottom">
                 <div class="wave waveBottom" style={{backgroundImage: `url(${wave2})`,backgroundSize:'50% 100%',padding:'0 0'}}></div>
               </div>

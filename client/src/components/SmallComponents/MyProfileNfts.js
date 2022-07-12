@@ -1,14 +1,14 @@
 import React from "react";
 
 function MyProfileNfts(props) {
-  let { putonsale, setShow, setNftsImg, data, joinSound } = props;
+  let { putonsale, setShow, setNftsImg, data,playSound } = props;
   return (
     <div>
       {putonsale ? (
         <button
           onClick={() => {
             setShow(true);
-            joinSound();
+            playSound();
             setNftsImg(data.avatar);
           }}
           className="metablog_primary-filled-button w-100"
@@ -18,7 +18,7 @@ function MyProfileNfts(props) {
       ) : (
         <button
           onClick={() => {
-            joinSound();
+            playSound();
             setNftsImg(data.avatar);
           }}
           className="metablog_gradient-button w-100"

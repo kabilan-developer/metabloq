@@ -4,7 +4,7 @@ import { connectFailed } from "../../redux/WalletAction";
 import "./Header.css";
 import useWindowDimensions from "../../helpers/useWindowDimensions";
 //other files
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Image, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { RiArrowDownSLine } from "react-icons/ri";
@@ -16,6 +16,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { AiOutlineLogout } from "react-icons/ai";
 
 const metablog_logo = require("../../assets/metablog_logo.png");
+const userlogo = require("../../assets/profile/profilepic.png");
 
 const Header = () => {
   const [openWallet, setOpenWallet] = useState(false);
@@ -298,12 +299,11 @@ const Header = () => {
                      {" "}
                      <span>Log in</span>
                    </button> : 
-                    <div className="d-flex ">
-                      <FaUserCircle color="#0295FA" size={40} onClick={()=> navigate("collectors")}/>
-                     <AiOutlineLogout color="#0295FA" size={40} onClick={()=>{
-                          localStorage.removeItem('@loggedin')
-                          navigate("signin")
-                     }} />
+                    <div className="myprofile_userlogo d-flex">
+                      <Image fluid src={userlogo} height={40} width={40} 
+                      style={{objectFit:'cover',borderRadius:'100px'}}
+                      onClick={()=> navigate("collectors")}/>
+                  
                     </div>
 
                   }
