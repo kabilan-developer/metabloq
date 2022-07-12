@@ -8,7 +8,7 @@ import connectWallet from '../../assets/audio/connectWallet.mp3';
 
 const smallstar = require('../../assets/smallstar.png')
 const bigstar = require('../../assets/bigstar.png')
-
+const bloqs = require('../../assets/logo_block.png')
 const style = {
     position: 'absolute',
     top: '50%',
@@ -52,24 +52,24 @@ function PlacebidModal(props) {
                   <h3 className="font-weight-bold">Place a bid</h3>
                   <small onClick={placeModalClose} style={{cursor:'pointer'}}>X</small>
                 </div>
-                <small>Highest Bid 0.824 XDC</small>
+                <small>Highest Bid 0.824 BLOQS</small>
                 </div>
                 
-                <small>You must bid at least 0.825 XDC</small>
+                <small>You must bid at least 0.825 BLOQS</small>
               <div>
                 <Stack gap={1}>
                   <small className="font-weight-bold">Your bid</small>
                   <div className=" d-flex justify-content-between align-items-center">
-                    <small>Enter bid</small> <small className="font-weight-bold">XDC</small>
+                    <small>Enter bid</small> <small className="font-weight-bold"><Image src={bloqs} fluid  height={20} width={20}/>&nbsp;BLOQS</small>
                   </div>
                   <div className=" d-flex justify-content-between align-items-center">
-                    <small>Your balance</small> <small className="font-weight-bold">4.568 XDC</small>
+                    <small>Your balance</small> <small className="font-weight-bold"><Image src={bloqs} fluid  height={20} width={20}/>&nbsp;4.568 BLOQS</small>
                   </div>
                   <div className=" d-flex justify-content-between align-items-center">
-                    <small>Service fee</small> <small className="font-weight-bold">0.001 XDC</small>
+                    <small>Service fee</small> <small className="font-weight-bold"><Image src={bloqs} fluid  height={20} width={20}/>&nbsp;0.001 BLOQS</small>
                   </div>
                   <div className=" d-flex justify-content-between align-items-center">
-                    <small>Total</small> <small className="font-weight-bold">0.001 XDC</small>
+                    <small>Total</small> <small className="font-weight-bold"><Image src={bloqs} fluid  height={20} width={20}/>&nbsp;0.001 BLOQS</small>
                   </div>
                 </Stack>
               </div>

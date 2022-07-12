@@ -4,6 +4,7 @@ import ExploreCategoryCards from "./ExploreCategoryCards";
 import "./Styles.css";
 import useWindowDimensions from "../../helpers/useWindowDimensions";
 import Fade from 'react-reveal/Fade';
+import { useNavigate } from "react-router-dom";
 
 const data = {
   name:"Explore by Category",
@@ -12,7 +13,7 @@ const data = {
 
 function ExploreCategory() { 
   const {width} = useWindowDimensions();
-
+  const navigate = useNavigate()
   return (
     <Fade bottom>
     <div className="metabloq_container">
@@ -31,7 +32,7 @@ function ExploreCategory() {
           }
           
         </div>
-        <div  style={{cursor:'pointer'}}>
+        <div onClick={()=> navigate("collections")} style={{cursor:'pointer'}}>
         <div className="font-weight-bold">Explore More</div>
         <div className="primary_coloredunderline ms-auto"></div>
         </div>

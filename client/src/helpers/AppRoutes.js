@@ -46,6 +46,7 @@ function AppRoutes() {
             <Route path="ranking" element={<Ranking/>}/>
             <Route path="activity" element={<Activity/>}/>
             <Route path="collections/collectionhome" element={<CollectablesHome/>}/>
+            <Route path="collections/collectionhome/:id" element={<NFTDetailsPage LiveAuctionData={LiveAuctionData}/>}/>
             
             <Route path="*" element={<h1 className="text-center">404 NOT FOUND</h1>}/>
         </Routes>

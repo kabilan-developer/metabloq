@@ -95,7 +95,7 @@ function CreateCollection() {
                         </div>
                         <div>
                             <div className='bold'>Blockchain</div>
-                            <input type="text" placeholder='XDC' className='createitem_input'/>
+                            <input type="text" placeholder='BLOQS' className='createitem_input'/>
                         </div>
                         </Stack>
                     </Bounce>

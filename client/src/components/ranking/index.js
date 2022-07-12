@@ -5,14 +5,14 @@ import './Styles.css';
 const avatar1 = require('../../assets/nfts/1.png')
 const avatar2 = require('../../assets/nfts/2.png')
 const avatar3 = require('../../assets/nfts/3.png')
-
+const bloqs = require('../../assets/logo_block.png')
 
 const datas = [
   {
     id: 1,
     avatar: avatar1,
     name: "LastChains",
-    volume: "13734.88 BLOQS",
+    volume: "Art",
     percentage: "+23.54%",
     price: "1.324 BLOQS",
     asset: "12",
@@ -22,8 +22,8 @@ const datas = [
   {
     id: 2,
     avatar: avatar2,
-    name: "LastChains",
-    volume: "13734.88 BLOQS",
+    name: "Wrist Wearables",
+    volume: "Building",
     percentage: "-2.54%",
     price: "1.324 BLOQS",
     asset: "54",
@@ -33,8 +33,8 @@ const datas = [
   {
     id: 3,
     avatar: avatar3,
-    name: "LastChains",
-    volume: "13734.88 BLOQS",
+    name: "Pets Collections",
+    volume: "Miscellaneous",
     percentage: "+25.14%",
     price: "1.324 BLOQS",
     asset: "76",
@@ -87,7 +87,7 @@ function Ranking() {
           <div className="ranking_table">
           <Row className="ranking_table-header lufga-bold d-flex justify-content-between align-items-center">
             <Col className="text-center">Collection</Col>
-            <Col className="text-center">Volume</Col>
+            <Col className="text-center">Category</Col>
             <Col className="text-center">7 day%</Col>
             <Col className="text-center">Floor Price</Col>
             <Col className="text-center">NFTs</Col>
@@ -98,10 +98,10 @@ function Ranking() {
             <>
               <Row className="ranking_table-body d-flex justify-content-between align-items-center">
                 <Col className="text-center">
-                  <Stack gap={1} direction="horizontal">
+                  <Stack gap={2} direction="horizontal">
                   <span className="lufga-bold">{data.id}</span>
-                  <Image fluid src={data.avatar} height={25} width={25} className="rounded_img"/>
-                    <small>{data.name}</small>
+                  <Image fluid src={data.avatar} height={35} width={35} className="rounded_img"/>
+                    <small className="text-left">{data.name}</small>
                   </Stack>
                 </Col>
                 <Col className="text-center">
@@ -110,8 +110,8 @@ function Ranking() {
                 <Col className="text-center">
                   <small style={{color:data.color}}>{data.percentage}</small>
                 </Col>
-                <Col className="text-center">
-                  <small>{data.price}</small>
+                <Col className="d-flex align-items-center justify-content-center">
+                  <Image src={bloqs} fluid  height={20} width={20}/> &nbsp;<small>{data.price}</small>
                 </Col>
                 <Col className="text-center">
                   <small>{data.asset}</small>

@@ -6,6 +6,7 @@ import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
 import useSound from "use-sound";
 import buttonSound from "../../assets/audio/button.wav";
+import { useNavigate } from "react-router-dom";
 
 const cardsPerPage = 3;
 let arrayForHoldingCards = [];
@@ -30,6 +31,7 @@ function CollectorsCollectionCard(props) {
     playSound();
   };
   const [playSound] = useSound(buttonSound);
+  const navigate = useNavigate()
   return (
     <Stack gap={3}>
       {
@@ -42,7 +44,7 @@ function CollectorsCollectionCard(props) {
         ).map((data) => (
           <Col xxl={4} xl={4} lg={4} md={4} sm={12} xs={12} className="mb-3">
             <Fade bottom>
-              <div className="collections_cards metablog_cards" key={data.id}>
+              <div onClick={()=>navigate("collectionhome")} className="collections_cards metablog_cards" key={data.id}>
                 <Stack gap={2}>
                   <Row className="collections_cards-grid">
                     <Col>

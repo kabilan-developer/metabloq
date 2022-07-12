@@ -16,7 +16,7 @@ function Footer() {
 
   return (
     <>
-        <div className="footer_container">
+        <div className="footer_container mt-sm-5">
           <hr />
           <Row>
             <Col xxl={2} xl={2} lg={2} md={2} sm={12} xs={12} className="mb-3">

@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) =>
             '&.MuiTypography-root': {
                 textAlign: 'center',
                 fontWeight: '700',
+                fontFamily:'Poppins-Regular'
             },
         },
         divider: {
@@ -47,6 +48,7 @@ const useStyles = makeStyles((theme) =>
                 margin:'2% 12% 0 12%',
                 backgroundColor:'#F9F9F9',
                 borderRadius:'1em',
+                fontFamily:'Poppins-Regular'
             },
         },
         radioContainer: {
@@ -71,11 +73,13 @@ const useStyles = makeStyles((theme) =>
                 flexDirection: 'row',
                 alignItems: 'center',
                 justifyContent: 'flex-start',
+                fontFamily:'Poppins-Regular'
             }
         },
         title: {
             '&.MuiTypography-root': {
                 marginLeft: '2%',
+                fontFamily:'Poppins-Regular'
             },
         },
         icon: {
@@ -97,7 +101,7 @@ const useStyles = makeStyles((theme) =>
                 height: '51px',
                 width: '100%',
                 color: 'white',
-                borderRadius: '30px',
+                borderRadius: '.7em',
                 background: 'linear-gradient(90deg, #6DC6FE 0%, #0295FA 100%)',
             },
         },

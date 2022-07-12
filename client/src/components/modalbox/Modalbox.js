@@ -15,7 +15,7 @@ function Modalbox(props) {
     const classes = Styles()
 
     const method = [
-        { value: 'XDC', label: 'XDC', },
+        { value: 'BLOQS', label: 'BLOQS', },
     ]
     const days = [
         { value: '3 day', label: '3 Day', },
@@ -85,11 +85,11 @@ function Modalbox(props) {
                                 </Grid>
                                 <Grid container direction='column' justifyContent='center' textAlign='center'>
                                     {/* <Grid container direction='row' justifyContent='space-between' textAlign='left' className='forinputwithselectbox'>
-                                        <input className='inputinnerselect' type='text' placeholder='XDC' />
+                                        <input className='inputinnerselect' type='text' placeholder='BLOQS' />
                                         <Select placeholder='ETH' options={options} />
                                     </Grid> */}
                                     <Grid container direction='row' justifyContent='space-between' textAlign='left' className='forinputselectsec'>
-                                        <input className='inputinnerselectsec' type='text' placeholder='$0 XDC' />
+                                        <input className='inputinnerselectsec' type='text' placeholder='$0 BLOQS' />
                                     </Grid>
 
                                 </Grid>

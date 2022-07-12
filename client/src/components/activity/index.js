@@ -10,6 +10,7 @@ const avatar1 = require('../../assets/nfts/1.png')
 const avatar2 = require('../../assets/nfts/2.png')
 const avatar3 = require('../../assets/nfts/3.png')
 const avatar4 = require('../../assets/nfts/4.png')
+const bloqs = require('../../assets/logo_block.png')
 
 const datas = [
   {
@@ -17,35 +18,35 @@ const datas = [
     item_avatar: avatar1,
     item_name: "Faceless Souls",
     item_email:"Faceless Souls #1763",
-    price: "1.5 XDC",
+    price: "1.5 BLOQS",
     dollar:"$2,683.73",
     quantity:1,
     from:'0x11..9088',
     to:"0x11..9011",
     time:"12 sec ago",
     icon_name:"Sale",
-    icon:<HiShoppingCart size={20}/>
+    icon:<HiShoppingCart size={22}/>
   },
   {
     id: 2,
     item_avatar: avatar2,
     item_name: "Wacky Monkeys Collection",
     item_email:"Monkey #572",
-    price: "1.5 XDC",
+    price: "1.5 BLOQS",
     dollar:"$2,683.73",
     quantity:1,
     from:'0x11..2131',
     to:"0x11..8970",
     time:"12 sec ago",
     icon_name:"List",
-    icon:<BsTagFill size={20}/>
+    icon:<BsTagFill size={22}/>
   },
   {
     id: 3,
     item_avatar: avatar3,
     item_name: "SQL gods",
     item_email:"SQL gods 2337",
-    price: "1.5 XDC",
+    price: "1.5 BLOQS",
     dollar:"$2,683.73",
     quantity:1,
     from:'0x51..9765',
@@ -59,7 +60,7 @@ const datas = [
     item_avatar: avatar4,
     item_name: "Faceless Souls",
     item_email:"Faceless Souls",
-    price: "1.5 XDC",
+    price: "1.5 BLOQS",
     dollar:"$2,683.73",
     quantity:1,
     from:'0x31..9080',
@@ -124,16 +125,17 @@ function Activity({myprofile}) {
                 </Col>
                 <Col  className="text-left d-flex">
                   <Stack gap={2} direction="horizontal">
-                    <Image fluid src={data.item_avatar} height={25} width={25} className="rounded_img"/>
+                    <Image fluid src={data.item_avatar} height={35} width={35} className="rounded_img"/>
                     <div className="d-flex flex-column">
-                        <font size="1" >{data.item_name}</font>
-                        <font size="1" className="lufga-bold">{data.item_email}</font>
+                        <small  >{data.item_name}</small>
+                        <small  className="lufga-bold">{data.item_email}</small>
                     </div>
                   </Stack>
                 </Col>
                 <Col className="text-center">
                     <div className="d-flex flex-column">
-                        <small className="lufga-bold">{data.price}</small>
+                        
+                        <small className="lufga-bold"> <Image src={bloqs} fluid  height={20} width={20}/> &nbsp;{data.price}</small>
                         <font size="1">{data.dollar}</font>
                     </div>
                 </Col>

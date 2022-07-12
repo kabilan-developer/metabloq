@@ -52,6 +52,15 @@
 .createitem_input::placeholder{
   color: #838383;
 }
+.add-items{
+  background: white;
+  padding: .5em;
+  border-radius: .5em;
+  border: .5px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 @media (max-width: 576px) {
   .createitem_method-box {

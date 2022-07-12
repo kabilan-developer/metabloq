@@ -10,7 +10,7 @@ function CollectorsPage() {
         <Stack gap={5}>
             <CollectorsProfile/>
             <CollectorsCollectionCard myprofile="myprofile"/>
-            <NFTDetailsCards collectors="collectors"/>
+            <NFTDetailsCards collectors="collectors" myprofile="myprofile"/>
         </Stack>
         
     </div>

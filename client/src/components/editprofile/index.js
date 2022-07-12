@@ -129,7 +129,6 @@ function EditProfile() {
                   placeholder="+91"
                   value={phoneCode}
                   onChange={setPhoneCode}
-                  className="editprofile_input"
                 />
               </div>
               <div className="w-75">
@@ -141,7 +140,7 @@ function EditProfile() {
               </div>
             </Stack>
           </div>
-          <div>
+          <div className="dummy-wrapper">
             <span>Country</span>
             <Select
               id="country"
@@ -154,7 +153,7 @@ function EditProfile() {
               }}
             />
           </div>
-          <div className="">
+          <div className="dummy-wrapper">
             <span>State</span>
             <Select
               id="state"
@@ -169,7 +168,7 @@ function EditProfile() {
             />
           </div>
 
-          <div>
+          <div className="dummy-wrapper">
             <span>City</span>
             <Select
               id="city"

@@ -6,6 +6,11 @@
 
     background-color: lightgray;
     border-radius: 1em 1em 0 0 ;
+    /* position: relative; */
+}
+.collection_logo-preview{
+    position: relative;
+    bottom: 40px;
 }
 .collections_home-info{
     width: 100%;

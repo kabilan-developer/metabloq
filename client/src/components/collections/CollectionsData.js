@@ -37,7 +37,7 @@ export const CollectionsData = [
     {
         id:1,
         name:"MetaPets",
-        c_name:"Art",
+        c_name:"Realistic Art",
         sub_name:"sara Hayam",
         c_sub_name:"Chriss Avans",
         likes:350,
@@ -51,7 +51,7 @@ export const CollectionsData = [
     {
         id:2,
         name:"My Streets",
-        c_name:"Buildings",
+        c_name:"Sky high Buildings",
         sub_name:"Rossa wanda",
         c_sub_name:"Satty",
         likes:150,
@@ -65,7 +65,7 @@ export const CollectionsData = [
     {
         id:3,
         name:"Football is Life",
-        c_name:"Wearables",
+        c_name:"Smart Wearables",
         sub_name:"Rooney bloc",
         c_sub_name:"Sarah Coti",
         likes:882,
@@ -93,7 +93,7 @@ export const CollectionsData = [
     {
         id:5,
         name:"My Streets",
-        c_name:"Meta pets",
+        c_name:"Friendly Meta pets",
         sub_name:"Rossa wanda",
         c_sub_name:"Rossa wanda",
         likes:150,

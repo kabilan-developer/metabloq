@@ -69,10 +69,10 @@ function ConenctWallet({ openWallet, setOpenWallet }) {
       <Modal open={openWallet} onClose={() => setOpenWallet(false)}>
         <Box className={classes.walletContainer}>
           <Box className={classes.modalHeader}>
-              <Typography variant="h4" className={classes.walletTitle}>
+              <Typography variant="h5" className={classes.walletTitle}>
                 Connect your wallet
               </Typography>
-              <MdOutlineCancel size={40} onClick={() => setOpenWallet(false)}/>
+              <MdOutlineCancel size={25} onClick={() => setOpenWallet(false)}/>
           </Box>
     
 

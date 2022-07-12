@@ -16,7 +16,7 @@ const avatar1 = require('../../assets/profilepics/face7.jpg')
 const avatar2 = require('../../assets/profilepics/face8.jpg')
 const avatar3 = require('../../assets/profilepics/face9.jpg')
 const avatar4 = require('../../assets/profilepics/face5.jpg')
-
+const bloqs = require('../../assets/logo_block.png')
 
 function NFTDetails(props) {
     const { id } = useParams();
@@ -116,21 +116,21 @@ const [buyModalOpen, setBuyModalOpen] = useState(false);
                                 <div className='d-flex'>
                                     <Image src={avatar1} height={45} width={45} />
                                     <div className='d-flex flex-column mx-3'>
-                                        <span className='bold'>Bid 0.093 XDC</span>
+                                        <span className='bold'>Bid 0.093 <Image src={bloqs} fluid  height={20} width={20}/> &nbsp;BLOQS</span>
                                         <font size="2">by Harpreet at 3/10/2022, 10:15 AM</font>
                                     </div>
                                 </div>
                                 <div className='d-flex'>
                                     <Image src={avatar2} height={45} width={45} />
                                     <div className='d-flex flex-column mx-3'>
-                                        <span className='bold'>Bid 0.093 XDC</span>
+                                        <span className='bold'>Bid 0.093 <Image src={bloqs} fluid  height={20} width={20}/> &nbsp;BLOQS</span>
                                         <font size="2">by Harpreet at 3/10/2022, 10:15 AM</font>
                                     </div>
                                 </div>
                                 <div className='d-flex'>
                                     <Image src={avatar3} height={45} width={45} />
                                     <div className='d-flex flex-column mx-3'>
-                                        <span className='bold'>Bid 0.093 XDC</span>
+                                        <span className='bold'>Bid 0.093 <Image src={bloqs} fluid  height={20} width={20}/> &nbsp;BLOQS</span>
                                         <font size="2">by Harpreet at 3/10/2022, 10:15 AM</font>
                                     </div>
                                 </div>

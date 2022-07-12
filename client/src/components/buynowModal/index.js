@@ -5,6 +5,7 @@ import { Image, Stack } from "react-bootstrap";
 
 const smallstar = require('../../assets/smallstar.png')
 const bigstar = require('../../assets/bigstar.png')
+const bloqs = require('../../assets/logo_block.png')
 
 const style = {
     position: 'absolute',
@@ -52,17 +53,17 @@ function BuynowModal(props) {
               <div>
                 <Stack gap={1}>
                   <div className=" d-flex justify-content-between align-items-center">
-                    <small>1.005</small> <small className="font-weight-bold">XDC</small>
+                    <small>1.005</small> <small className="font-weight-bold"><Image src={bloqs} fluid  height={20} width={20}/> &nbsp;BLOQS</small>
                   </div>
                   <hr/>
                   <div className=" d-flex justify-content-between align-items-center">
-                    <small>Your balance</small> <small className="font-weight-bold">8.498 XDC</small>
+                    <small>Your balance</small> <small className="font-weight-bold"><Image src={bloqs} fluid  height={20} width={20}/> &nbsp;8.498 BLOQS</small>
                   </div>
                   <div className=" d-flex justify-content-between align-items-center">
-                    <small>Service fee</small> <small className="font-weight-bold">0 XDC</small>
+                    <small>Service fee</small> <small className="font-weight-bold"><Image src={bloqs} fluid  height={20} width={20}/> &nbsp;0 BLOQS</small>
                   </div>
                   <div className=" d-flex justify-content-between align-items-center">
-                    <small>You pay will</small> <small className="font-weight-bold">0.007 XDC</small>
+                    <small>You pay will</small> <small className="font-weight-bold"><Image src={bloqs} fluid  height={20} width={20}/> &nbsp; 0.007 BLOQS</small>
                   </div>
                 </Stack>
               </div>

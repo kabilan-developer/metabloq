@@ -27,7 +27,7 @@ function Collections() {
               <h2 className="font-weight-bold poppins">{data.name}</h2>
             )}
           </div>
-          <div onClick={()=> navigate("collects")} style={{cursor:'pointer'}}>
+          <div onClick={()=> navigate("collections")} style={{cursor:'pointer'}}>
           <div className="font-weight-bold">Explore More</div>
           <div className="primary_coloredunderline ms-auto"></div>
           </div>

@@ -16,11 +16,12 @@
 .editprofile_input {
   width: 100%;
   background-color: white;
-  border-radius: 0.5em;
+  border-radius: 0.3em;
   outline: none !important;
-  border: none !important;
+  border: .5px solid lightgray !important;
   padding: 0.3em 0.5em;
   box-shadow: none !important;
+
 }
 
 .form-select {
@@ -32,7 +33,7 @@
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
-  border: 0.5px solid black;
+  border: 0.5px solid lightgray;
   border-radius: 0.5em !important;
   transition: none !important;
   -webkit-appearance: none;
@@ -40,6 +41,15 @@
   appearance: none;
   outline: none !important;
   box-shadow: none !important;
+}
+.PhoneInputInput {
+  flex: 1 1;
+  min-width: 0;
+  border: .5px solid lightgray;
+  border-radius: .3em;
+  padding: 0.3em 0.5em;
+  outline: none!important;
+  box-shadow: none!important;
 }
 
 @media(max-width:576px){

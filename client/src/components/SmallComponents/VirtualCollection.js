@@ -5,19 +5,23 @@ import { AiTwotoneHeart } from "react-icons/ai";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
 import { useNavigate } from "react-router-dom";
+import useWindowDimensions from "../../helpers/useWindowDimensions";
+
+const land1 = require('../../assets/category/land1.jpg')
+const land2 = require('../../assets/category/land2.jpg')
+const land3 = require('../../assets/category/land3.jpg')
+const land4 = require('../../assets/category/land4.jpg')
 
 function VirtualCollection(props) {
   let { virtual } = props;
   const navigate = useNavigate();
+  const {width} = useWindowDimensions()
   return (
     <Stack gap={3}>
       <Row>
-        {CollectionsData
-        .filter((data)=> data.c_name === virtual)
-        .map((data) => (
           <Col xxl={4} xl={4} lg={4} md={4} sm={12} xs={12} className="mb-3">
             <Fade bottom>
-              <div className="collections_cards metablog_cards" key={data.id}
+              <div className="collections_cards metablog_cards"
               onClick={()=> navigate("collectionhome")}>
                 <Stack gap={2}>
                   <Row className="collections_cards-grid">
@@ -28,7 +32,7 @@ function VirtualCollection(props) {
                                 <Image
                                 style={{height: '100%', width: '100%', objectFit: 'cover'}}
                                 fluid
-                                src={data.grid_img1}
+                                src={land1}
                                 alt="gridimg1"
                                 className="metabloq_img img-zoom-animation"
                             />
@@ -40,7 +44,7 @@ function VirtualCollection(props) {
 
                           <Image
                             fluid
-                            src={data.grid_img2}
+                            src={land2}
                             alt="gridimg1"
                             className="metabloq_img img-zoom-animation"
                           />
@@ -53,7 +57,7 @@ function VirtualCollection(props) {
                         <Col style={{ padding: 5 }}>
                           <Image
                             fluid
-                            src={data.grid_img3}
+                            src={land3}
                             alt="gridimg1"
                             className="metabloq_img img-zoom-animation"
                           />
@@ -64,7 +68,7 @@ function VirtualCollection(props) {
                         <Col style={{ padding: 5 }}>
                           <Image
                             fluid
-                            src={data.grid_img4}
+                            src={land4}
                             alt="gridimg1"
                             className="metabloq_img img-zoom-animation"
                           />
@@ -76,25 +80,246 @@ function VirtualCollection(props) {
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="d-flex flex-column">
                       <span className="font-weight-bold poppins">
-                        {data.c_name}
+                        Virtual Real Estate Collection 1
                       </span>
                       <small className="secondary-text poppins">
                         created by{" "}
                         <small className="font-weight-bold text-dark">
-                          {data.c_sub_name}
+                          Maddy
                         </small>
                       </small>
                     </div>
                     <div className="d-flex justify-content-center align-items-center">
                       <AiTwotoneHeart />
-                      <span className="mx-1 poppins">{data.c_likes}</span>
+                      <span className="mx-1 poppins">278</span>
                     </div>
                   </div>
+                  <div className="d-flex justify-content-start align-items-center h-100 mb-sm-3 lufga">
+                  <Stack gap={width > 600 ? "3" : "2"} direction="horizontal">
+                    <div className="d-flex flex-column ">
+                      <small className="fw-bold">9.4k</small>
+                      <small>items</small>
+                    </div>
+                    <div className="d-flex flex-column ">
+                      <small className="fw-bold">5.7k</small>
+                      <small>owners</small>
+                    </div>
+
+                    <div className="d-flex flex-column ">
+                      <small className="fw-bold">8.9k</small>
+                      <small>total volume</small>
+                    </div>
+                    <div className="d-flex flex-column">
+                      <small className="fw-bold">1.85</small>
+                      <small>floor price</small>
+                    </div>
+                  </Stack>
+                </div>
                 </Stack>
               </div>
             </Fade>
           </Col>
-        ))}
+          <Col xxl={4} xl={4} lg={4} md={4} sm={12} xs={12} className="mb-3">
+            <Fade bottom>
+              <div className="collections_cards metablog_cards"
+              onClick={()=> navigate("collectionhome")}>
+                <Stack gap={2}>
+                  <Row className="collections_cards-grid">
+                    <Col>
+                      <Row>
+                        <Col style={{ padding: 5 }}>
+           
+                                <Image
+                                style={{height: '100%', width: '100%', objectFit: 'cover'}}
+                                fluid
+                                src={land4}
+                                alt="gridimg1"
+                                className="metabloq_img img-zoom-animation"
+                            />
+                
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col style={{ padding: 5 }}>
+
+                          <Image
+                            fluid
+                            src={land2}
+                            alt="gridimg1"
+                            className="metabloq_img img-zoom-animation"
+                          />
+   
+                        </Col>
+                      </Row>
+                    </Col>
+                    <Col>
+                      <Row>
+                        <Col style={{ padding: 5 }}>
+                          <Image
+                            fluid
+                            src={land1}
+                            alt="gridimg1"
+                            className="metabloq_img img-zoom-animation"
+                          />
+
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col style={{ padding: 5 }}>
+                          <Image
+                            fluid
+                            src={land3}
+                            alt="gridimg1"
+                            className="metabloq_img img-zoom-animation"
+                          />
+
+                        </Col>
+                      </Row>
+                    </Col>
+                  </Row>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div className="d-flex flex-column">
+                      <span className="font-weight-bold poppins">
+                        Virtual Real Estate Collection 2
+                      </span>
+                      <small className="secondary-text poppins">
+                        created by{" "}
+                        <small className="font-weight-bold text-dark">
+                          Smith
+                        </small>
+                      </small>
+                    </div>
+                    <div className="d-flex justify-content-center align-items-center">
+                      <AiTwotoneHeart />
+                      <span className="mx-1 poppins">228</span>
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-start align-items-center h-100 mb-sm-3 lufga">
+                  <Stack gap={width > 600 ? "3" : "2"} direction="horizontal">
+                    <div className="d-flex flex-column ">
+                      <small className="fw-bold">1.4k</small>
+                      <small>items</small>
+                    </div>
+                    <div className="d-flex flex-column ">
+                      <small className="fw-bold">3.7k</small>
+                      <small>owners</small>
+                    </div>
+
+                    <div className="d-flex flex-column ">
+                      <small className="fw-bold">9.5k</small>
+                      <small>total volume</small>
+                    </div>
+                    <div className="d-flex flex-column">
+                      <small className="fw-bold">2.85</small>
+                      <small>floor price</small>
+                    </div>
+                  </Stack>
+                </div>
+                </Stack>
+              </div>
+            </Fade>
+          </Col>
+          <Col xxl={4} xl={4} lg={4} md={4} sm={12} xs={12} className="mb-3">
+            <Fade bottom>
+              <div className="collections_cards metablog_cards"
+              onClick={()=> navigate("collectionhome")}>
+                <Stack gap={2}>
+                  <Row className="collections_cards-grid">
+                    <Col>
+                      <Row>
+                        <Col style={{ padding: 5 }}>
+           
+                                <Image
+                                style={{height: '100%', width: '100%', objectFit: 'cover'}}
+                                fluid
+                                src={land2}
+                                alt="gridimg1"
+                                className="metabloq_img img-zoom-animation"
+                            />
+                
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col style={{ padding: 5 }}>
+
+                          <Image
+                            fluid
+                            src={land1}
+                            alt="gridimg1"
+                            className="metabloq_img img-zoom-animation"
+                          />
+   
+                        </Col>
+                      </Row>
+                    </Col>
+                    <Col>
+                      <Row>
+                        <Col style={{ padding: 5 }}>
+                          <Image
+                            fluid
+                            src={land4}
+                            alt="gridimg1"
+                            className="metabloq_img img-zoom-animation"
+                          />
+
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col style={{ padding: 5 }}>
+                          <Image
+                            fluid
+                            src={land3}
+                            alt="gridimg1"
+                            className="metabloq_img img-zoom-animation"
+                          />
+
+                        </Col>
+                      </Row>
+                    </Col>
+                  </Row>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div className="d-flex flex-column">
+                      <span className="font-weight-bold poppins">
+                        Virtual Real Estate Collection 3
+                      </span>
+                      <small className="secondary-text poppins">
+                        created by{" "}
+                        <small className="font-weight-bold text-dark">
+                          Sam
+                        </small>
+                      </small>
+                    </div>
+                    <div className="d-flex justify-content-center align-items-center">
+                      <AiTwotoneHeart />
+                      <span className="mx-1 poppins">315</span>
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-start align-items-center h-100 mb-sm-3 lufga">
+                  <Stack gap={width > 600 ? "3" : "2"} direction="horizontal">
+                    <div className="d-flex flex-column ">
+                      <small className="fw-bold">9.4k</small>
+                      <small>items</small>
+                    </div>
+                    <div className="d-flex flex-column ">
+                      <small className="fw-bold">5.7k</small>
+                      <small>owners</small>
+                    </div>
+
+                    <div className="d-flex flex-column ">
+                      <small className="fw-bold">8.9k</small>
+                      <small>total volume</small>
+                    </div>
+                    <div className="d-flex flex-column">
+                      <small className="fw-bold">1.85</small>
+                      <small>floor price</small>
+                    </div>
+                  </Stack>
+                </div>
+                </Stack>
+              </div>
+            </Fade>
+          </Col>
+
       </Row>
       <Zoom bottom duration={2000}>
         <div className="d-flex justify-content-center">
